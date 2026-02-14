@@ -44,7 +44,7 @@ public class SignInPage extends Base {
 
     //Log in with incorrect password
 
-    public void iniciarSesionError() {
+    public void loginError() {
         if (isDisplayed(userLocator)) {
             type("standard_user", userLocator);
             type("secret_sauc", passwordLocator);
