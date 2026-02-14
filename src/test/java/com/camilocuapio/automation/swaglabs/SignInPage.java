@@ -76,19 +76,19 @@ public class SignInPage extends Base {
         List<WebElement> xMsjErrorr = findElements(xMsjError);
         return xMsjErrorr.size();
     }
-    //Obtener actuales productos
+    //Get a list of current products
 
-    public List<String> actualProductoss() {
+    public List<String> currentProducts() {
 
-        // Espera explícita para asegurar que los elementos estén cargados
-        esperasExplicitasColle(listadeProductosElement);
+        // Explicit wait to ensure that the elements are loaded
+        esperasExplicitasColle(listProductElement);
 
-        // Captura los elementos
-        List<WebElement> actualProductoselement = findElements(listadeProductosElement);
+        // Capture the elements
+        List<WebElement> actualProductoselement = findElements(listProductElement);
         List<String> actualProductos = new ArrayList<>();
 
         for (WebElement element : actualProductoselement) {
-            actualProductos.add(element.getText().trim());//trim limpia espacios
+            actualProductos.add(element.getText().trim());//trim clean spaces
         }
         return actualProductos;
     }
