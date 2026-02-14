@@ -31,7 +31,7 @@ public class SignIn_Test {
             driver.quit();
         }
     }
-    //Iniciar sesion y validar nombre de pagina
+    //Log in with correct credentials
     @Test
     public void givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() throws InterruptedException {
         signInPage.login();
