@@ -2,7 +2,10 @@ package com.camilocuapio.automation.swaglabs;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertTrue;
 
 public class SignIn_Test {
     private WebDriver driver;
@@ -28,5 +31,14 @@ public class SignIn_Test {
             driver.quit();
         }
     }
+    //Iniciar sesion y validar nombre de pagina
+    @Test
+    public void givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() throws InterruptedException {
+        signInPage.login();
+        Thread.sleep(2000);
+        assertTrue(signInPage.pageAccess());
+        signInPage.takeScreenshot("sigin"); //Captura pantalla
+    }
+
 }
 
