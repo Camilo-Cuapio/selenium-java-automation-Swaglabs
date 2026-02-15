@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class SignIn_Test {
@@ -39,6 +40,15 @@ public class SignIn_Test {
         assertTrue(signInPage.pageAccess());
         signInPage.takeScreenshot("sigin"); //Captura pantalla
     }
+
+    //Iniciar sesion contraseña incorrecta y validar mensaje de error
+    @Test
+    public void test2() throws InterruptedException {
+        signInPage.iniciarSesionError();
+        assertEquals("Epic sadface: Username and password do not match any user in this service", iniciarSesionPagina.mensajeErrorLogeo());
+        //iniciarSesionPagina.takeScreenshot("Contraseña incorrecta, Mensaje de error"); //captura pantalla
+    }
+
 
 }
 
