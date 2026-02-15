@@ -44,8 +44,8 @@ public class SignIn_Test {
     //Iniciar sesion contraseña incorrecta y validar mensaje de error
     @Test
     public void test2() throws InterruptedException {
-        signInPage.iniciarSesionError();
-        assertEquals("Epic sadface: Username and password do not match any user in this service", iniciarSesionPagina.mensajeErrorLogeo());
+        signInPage.loginError();
+        assertEquals("Epic sadface: Username and password do not match any user in this service", signInPage.mensajeErrorLogeo());
         //iniciarSesionPagina.takeScreenshot("Contraseña incorrecta, Mensaje de error"); //captura pantalla
     }
 
