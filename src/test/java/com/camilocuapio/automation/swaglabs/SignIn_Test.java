@@ -33,7 +33,7 @@ public class SignIn_Test {
     }
     //Log in with correct credentials
     @Test
-    public void givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() throws InterruptedException {
+    public void TC_01_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() throws InterruptedException {
         signInPage.login();
         Thread.sleep(2000);
         assertTrue(signInPage.pageAccess());
