@@ -38,15 +38,15 @@ public class SignIn_Test {
         signInPage.login();
         Thread.sleep(2000);
         assertTrue(signInPage.pageAccess());
-        signInPage.takeScreenshot("sigin"); //Captura pantalla
+        //signInPage.takeScreenshot("TC_01_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted"); //Captura pantalla
     }
 
-    //Iniciar sesion contraseña incorrecta y validar mensaje de error
+
     @Test
-    public void test2() throws InterruptedException {
+    public void TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed() throws InterruptedException {
         signInPage.loginError();
-        assertEquals("Epic sadface: Username and password do not match any user in this service", signInPage.mensajeErrorLogeo());
-        //iniciarSesionPagina.takeScreenshot("Contraseña incorrecta, Mensaje de error"); //captura pantalla
+        assertEquals("Epic sadface: Username and password do not match any user in this service", signInPage.loginErrorMessage());
+        //iniciarSesionPagina.takeScreenshot("TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed"); //captura pantalla
     }
 
 
