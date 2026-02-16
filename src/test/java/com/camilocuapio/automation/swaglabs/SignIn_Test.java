@@ -49,6 +49,14 @@ public class SignIn_Test {
         //iniciarSesionPagina.takeScreenshot("TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed"); //captura pantalla
     }
 
+@Test
+    public void TC_03_dadoQueSeIngresaContrasenaIncorrecta_cuandoElUsuarioIntentaIniciarSesion_entoncesLosBotonesXSeMuestranEnUsuarioContrasenaYMensajeDeError(){
+    signInPage.loginError();
+    assertEquals(1,signInPage.xBtnUser());
+    assertEquals(1,signInPage.xBtnPassword());
+    assertEquals(1,signInPage.xBtnMsjError());
+//iniciarSesionPagina.takeScreenshot("Validate that the “X” button is displayed.")
+}
 
 
 
