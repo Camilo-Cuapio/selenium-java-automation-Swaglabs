@@ -49,7 +49,7 @@ public class SignIn_Test {
         //iniciarSesionPagina.takeScreenshot("TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed"); //captura pantalla
     }
 
-//test in jenkins
+
 
 
 
