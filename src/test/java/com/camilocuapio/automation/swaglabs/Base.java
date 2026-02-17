@@ -101,7 +101,7 @@ public class Base {
     }
 
     // Explicit wait to ensure that the elements are loaded
-    public void esperasExplicitasColle(By locator) {
+    public void explicitWaitsCollection(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }

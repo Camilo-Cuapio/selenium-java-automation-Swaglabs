@@ -20,8 +20,7 @@ public class SignInPage extends Base {
     By xUser = By.cssSelector("#login_button_container>div>form>div:nth-child(1)>svg");
     By xPassword = By.cssSelector("#login_button_container>div>form>div:nth-child(2)>svg");
     By xMsjError = By.cssSelector(".error-message-container>h3>button>svg");
-    //Localizar de lista actual productos
-    By listProductElement = By.cssSelector(".inventory_item_name");
+
 
     public SignInPage(WebDriver driver) {
         super(driver);
@@ -76,20 +75,6 @@ public class SignInPage extends Base {
         List<WebElement> xMsjErrorr = findElements(xMsjError);
         return xMsjErrorr.size();
     }
-    //Get a list of current products
 
-    public List<String> currentProducts() {
-
-        // Explicit wait to ensure that the elements are loaded
-        esperasExplicitasColle(listProductElement);
-
-        // Capture the elements
-        List<WebElement> actualProductoselement = findElements(listProductElement);
-        List<String> actualProductos = new ArrayList<>();
-
-        for (WebElement element : actualProductoselement) {
-            actualProductos.add(element.getText().trim());//trim clean spaces
-        }
-        return actualProductos;
     }
-}
+

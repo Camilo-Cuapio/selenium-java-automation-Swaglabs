@@ -55,12 +55,8 @@ public class SignIn_Test {
     assertEquals(1,signInPage.xBtnUser());
     assertEquals(1,signInPage.xBtnPassword());
     assertEquals(1,signInPage.xBtnMsjError());
-//iniciarSesionPagina.takeScreenshot("Validate that the “X” button is displayed.")
+//iniciarSesionPagina.takeScreenshot("Validate that the “X” button is displayed.");    //Captura pantalla
 }
-
-
-
-
 
 }
 
