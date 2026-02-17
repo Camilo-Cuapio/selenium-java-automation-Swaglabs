@@ -1,5 +1,6 @@
 package com.camilocuapio.automation.swaglabs;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -20,5 +21,10 @@ public class Home_Test {
         }
     }
     //Close page
-    @Test
+    @After
+    public void tearDown(){
+        if (driver !=null){
+            driver.quit();
+        }
+    }
 }
