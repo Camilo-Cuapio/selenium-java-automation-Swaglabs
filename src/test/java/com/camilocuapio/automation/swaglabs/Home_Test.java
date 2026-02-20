@@ -21,8 +21,18 @@ public class Home_Test {
         Base base = new Base();
         driver = base.chromeDriverConnection();
         if (driver != null) {
+
+            // Creamos la página de login
+            SignInPage signInPage = new SignInPage(driver);
+            signInPage.visit("https://www.saucedemo.com/");
+            signInPage.login(); // LOGIN explícito
+            // Ahora sí podemos ir a HomePage
+
+
+
+
+
             homePage = new HomePage(driver);
-            homePage.visit("https://www.saucedemo.com/inventory.html");
         } else {
             throw new RuntimeException("The WebDriver could not be started. Check your Chrome version.");
         }
