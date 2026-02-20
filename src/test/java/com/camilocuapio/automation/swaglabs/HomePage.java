@@ -19,7 +19,7 @@ public class HomePage extends Base {
     }
 
     //current list of products
-    public List<String> currentproduct2(){
+    public List<String> currentProducts(){
         // Explicit wait to ensure that the elements are loaded
         explicitWaitsCollection(listProductElement);
 

@@ -10,6 +10,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class Home_Test {
     private WebDriver driver;
     HomePage homePage;
@@ -20,7 +22,7 @@ public class Home_Test {
         driver = base.chromeDriverConnection();
         if (driver != null) {
             homePage = new HomePage(driver);
-            homePage.visit("https://www.saucedemo.com/");
+            homePage.visit("https://www.saucedemo.com/inventory.html");
         } else {
             throw new RuntimeException("The WebDriver could not be started. Check your Chrome version.");
         }
@@ -36,6 +38,8 @@ public class Home_Test {
 
     @Test
     public void TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible() {
+
+
         List<String> expectedProducts = new ArrayList<>();
         expectedProducts.add("Test.allTheThings() T-Shirt (Red)");
         expectedProducts.add("Sauce Labs Backpack");
@@ -46,6 +50,6 @@ public class Home_Test {
 
         Collections.sort(expectedProducts);
 
-
+assertEquals(expectedProducts,homePage.currentProducts());
     }
 }

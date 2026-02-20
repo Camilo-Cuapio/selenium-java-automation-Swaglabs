@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
+
+
+
     private WebDriver driver;
 
     public Base() {
@@ -43,6 +46,11 @@ public class Base {
         }
         return driver;
     }
+
+
+
+
+
 
     //Find an element
     public WebElement findElement(By locator) {

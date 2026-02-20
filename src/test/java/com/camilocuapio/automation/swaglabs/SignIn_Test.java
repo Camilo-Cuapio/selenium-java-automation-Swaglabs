@@ -26,7 +26,7 @@ public class SignIn_Test {
     }
 
     //Close page
-    @After
+   @After
     public void tearDown() {
         if (driver != null) {
             driver.quit();
