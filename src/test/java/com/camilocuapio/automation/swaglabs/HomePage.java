@@ -18,7 +18,7 @@ public class HomePage extends Base {
     //locate Dropdown
     By dropdownZtoAelement = By.cssSelector(".product_sort_container");
     //product List In Z To A Order
-    By ListProductElementZtoA = By.cssSelector("inventory_item_name ");
+    By listProductElementZtoA = By.cssSelector(".inventory_item_name");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -45,16 +45,17 @@ public class HomePage extends Base {
         dropdownZtoA.selectByVisibleText("Name (Z to A)");
 
     }
+
     public List<String> currentProductsZtoA() {
 
 
-       explicitWait(listProductElement);
+        explicitWaitsCollection(listProductElementZtoA);
 
-        List<WebElement> currentProductelementZtoA = findElements(ListProductElementZtoA);
-        List<String> currentProcductZtoA=new ArrayList<>();
+        List<WebElement> currentProductelementZtoA = findElements(listProductElementZtoA);
+        List<String> currentProcductZtoA = new ArrayList<>();
 
-        for(WebElement element:currentProductelementZtoA){
-            currentProcductZtoA.add(element.getText().trim());
+        for (WebElement elementZtoA : currentProductelementZtoA) {
+            currentProcductZtoA.add(elementZtoA.getText().trim());
         }
         return currentProcductZtoA;
 

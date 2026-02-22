@@ -41,7 +41,7 @@ public class Home_Test {
     }
 
     //Close page
-    @After
+   @After
     public void tearDown() {
         if (driver != null) {
             driver.quit();
@@ -75,8 +75,8 @@ assertEquals(expectedProducts,homePage.currentProductsNameAtoZ());
         expectedProductsZtoA.add("Sauce Labs Bike Light");
         expectedProductsZtoA.add("Sauce Labs Backpack");
 
-        System.out.println("actual:"+homePage.currentProductsZtoA());
+       homePage.dropDownZtoA();
 
-        System.out.println("esperada:"+expectedProductsZtoA);
+  assertEquals(expectedProductsZtoA,homePage.currentProductsZtoA());
     }
 }
