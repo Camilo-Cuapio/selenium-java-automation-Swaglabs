@@ -72,16 +72,17 @@ public class Home_Test {
         expectedProductsZtoA.add("Sauce Labs Fleece Jacket");
         expectedProductsZtoA.add("Sauce Labs Bolt T-Shirt");
 
-        Collections.sort(expectedProductsZtoA,Collections.reverseOrder());
+        Collections.sort(expectedProductsZtoA, Collections.reverseOrder());
         homePage.dropDownZtoA();
 //Validate expected product list against actual
         assertEquals(expectedProductsZtoA, homePage.currentProductsName());
         System.out.println(homePage.currentProductsName());
         System.out.println(expectedProductsZtoA);
     }
+
     @Test
-    public void TC_06_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInAscendingOrder(){
-        List<String> expectedPrice=new ArrayList<>();
+    public void TC_06_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInAscendingOrder() {
+        List<String> expectedPrice = new ArrayList<>();
 
         expectedPrice.add("$7.99");
         expectedPrice.add("$9.99");
@@ -90,11 +91,10 @@ public class Home_Test {
         expectedPrice.add("$29.99");
         expectedPrice.add("$49.99");
 
-
         homePage.dropDownLowToHigh();
-        System.out.println("actuale"+homePage.currentPrice());
-        System.out.println("esperado"+expectedPrice);
+        System.out.println("actuale" + homePage.currentPrice());
+        System.out.println("esperado" + expectedPrice);
 
-        assertEquals(expectedPrice,homePage.currentPrice());
+        assertEquals(expectedPrice, homePage.currentPrice());
     }
 }
