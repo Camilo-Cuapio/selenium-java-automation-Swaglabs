@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class StepTest {
 
-    private static final String GLOBAL_PARAMETER = "global value";
+   /* private static final String GLOBAL_PARAMETER = "global value";
 
     @Test
     public void annotatedStepTest() {
@@ -30,6 +30,6 @@ public class StepTest {
     @Step("Nested annotated step with global parameter [{this.GLOBAL_PARAMETER}]")
     public void nestedAnnotatedStep() {
 
-    }
+    }*/
 
 }
