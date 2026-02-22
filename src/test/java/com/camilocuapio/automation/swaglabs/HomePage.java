@@ -25,15 +25,15 @@ public class HomePage extends Base {
     }
 
     //current list of products
-    public List<String> currentProductsNameAtoZ() {
+    public List<String> currentProductsName() {
         // Explicit wait to ensure that the elements are loaded
         explicitWaitsCollection(listProductElement);
 
         // Capture the elements
-        List<WebElement> currentProductelementAtoZ = findElements(listProductElement);
+        List<WebElement> currentProductelement= findElements(listProductElement);
         List<String> currentProduct = new ArrayList<>();
 
-        for (WebElement element : currentProductelementAtoZ) {
+        for (WebElement element : currentProductelement) {
             currentProduct.add(element.getText().trim());//trim clean spaces
         }
         return currentProduct;
@@ -44,18 +44,6 @@ public class HomePage extends Base {
        dropDown("Name (Z to A)", dropdownZtoAelement);
 
     }
-//get Product List Sorted In Descending Order
-    public List<String> currentProductsZtoA() {
-        explicitWaitsCollection(listProductElementZtoA);
-// Capture the elements
-        List<WebElement> currentProductelementZtoA = findElements(listProductElementZtoA);
-        List<String> currentProcductZtoA = new ArrayList<>();
 
-        for (WebElement elementZtoA : currentProductelementZtoA) {
-            currentProcductZtoA.add(elementZtoA.getText().trim());
-        }
-        return currentProcductZtoA;
-
-    }
 
 }

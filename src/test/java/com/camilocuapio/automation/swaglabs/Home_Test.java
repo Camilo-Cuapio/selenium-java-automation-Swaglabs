@@ -60,7 +60,7 @@ public class Home_Test {
         //sortProductListInAscendingOrder
         Collections.sort(expectedProducts);
 //Validate expected product list against actual
-        assertEquals(expectedProducts, homePage.currentProductsNameAtoZ());
+        assertEquals(expectedProducts, homePage.currentProductsName());
     }
 
     @Test
@@ -77,8 +77,8 @@ public class Home_Test {
         Collections.sort(expectedProductsZtoA,Collections.reverseOrder());
         homePage.dropDownZtoA();
 //Validate expected product list against actual
-        assertEquals(expectedProductsZtoA, homePage.currentProductsZtoA());
-        System.out.println(homePage.currentProductsNameAtoZ());
+        assertEquals(expectedProductsZtoA, homePage.currentProductsName());
+        System.out.println(homePage.currentProductsName());
         System.out.println(expectedProductsZtoA);
     }
 }
