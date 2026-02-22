@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -21,6 +22,7 @@ public class Home_Test {
         Base base = new Base();
         driver = base.chromeDriverConnection();
         if (driver != null) {
+
 
             // Creamos la página de login
             SignInPage signInPage = new SignInPage(driver);
@@ -58,8 +60,23 @@ public class Home_Test {
         expectedProducts.add("Sauce Labs Fleece Jacket");
         expectedProducts.add("Sauce Labs Onesie");
 
+        //sortProductListInAscendingOrder
         Collections.sort(expectedProducts);
 
-assertEquals(expectedProducts,homePage.currentProducts());
+assertEquals(expectedProducts,homePage.currentProductsNameAtoZ());
+    }
+    @Test
+    public void TC_05_givenCurrentProductList_whenComparedWithExpectedList_thenProductsAreInZToAOrder(){
+        List<String> expectedProductsZtoA=new ArrayList<>();
+        expectedProductsZtoA.add("Test.allTheThings() T-Shirt (Red)");
+        expectedProductsZtoA.add("Sauce Labs Onesie");
+        expectedProductsZtoA.add("Sauce Labs Fleece Jacket");
+        expectedProductsZtoA.add("Sauce Labs Bolt T-Shirt");
+        expectedProductsZtoA.add("Sauce Labs Bike Light");
+        expectedProductsZtoA.add("Sauce Labs Backpack");
+
+        System.out.println("actual:"+homePage.currentProductsZtoA());
+
+        System.out.println("esperada:"+expectedProductsZtoA);
     }
 }

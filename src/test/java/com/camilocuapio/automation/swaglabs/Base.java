@@ -114,6 +114,11 @@ public class Base {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
 
+    public void explicitWait(By locator){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
     // Screenshot of each test
     public void takeScreenshot(String name) {
         File screenshotFile = ((TakesScreenshot) driver)
