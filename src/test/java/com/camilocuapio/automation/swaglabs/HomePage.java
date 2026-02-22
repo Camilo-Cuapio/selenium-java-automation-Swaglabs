@@ -16,9 +16,11 @@ public class HomePage extends Base {
     //Locate products from current list
     By listProductElement = By.cssSelector(".inventory_item_name");
     //locate Dropdown
-    By dropdownZtoAelement = By.cssSelector(".product_sort_container");
-    //product List In Z To A Order
-    By listProductElementZtoA = By.cssSelector(".inventory_item_name");
+    By dropdownelement = By.cssSelector(".product_sort_container");
+
+
+    By currentPriceListElement = By.cssSelector(".inventory_item_price");
+
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -30,7 +32,7 @@ public class HomePage extends Base {
         explicitWaitsCollection(listProductElement);
 
         // Capture the elements
-        List<WebElement> currentProductelement= findElements(listProductElement);
+        List<WebElement> currentProductelement = findElements(listProductElement);
         List<String> currentProduct = new ArrayList<>();
 
         for (WebElement element : currentProductelement) {
@@ -39,11 +41,25 @@ public class HomePage extends Base {
         return currentProduct;
     }
 
-    //click On Dropdown And Select Z  ToA Option
-   public void dropDownZtoA() {
-       dropDown("Name (Z to A)", dropdownZtoAelement);
+    //click On Dropdown And Select Z To A Option
+    public void dropDownZtoA() {
+        dropDown("Name (Z to A)", dropdownelement);
 
     }
 
+    //click on dropdown and select low to high option
+    public void dropDownLowToHigh() {
+        dropDown("Price (low to high)", dropdownelement);
+    }
 
+    //prie list
+    public List<String> currentPrice() {
+        explicitWaitsCollection(currentPriceListElement);
+        List<WebElement> priceListElement = findElements(currentPriceListElement);
+        List<String> priceList = new ArrayList<>();
+        for (WebElement price : priceListElement) {
+            priceList.add(price.getText().trim());
+        }
+        return priceList;
+    }
 }

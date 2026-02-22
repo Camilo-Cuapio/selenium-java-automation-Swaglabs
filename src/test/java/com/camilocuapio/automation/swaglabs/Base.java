@@ -108,7 +108,7 @@ public class Base {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-
+//Dropdown
     public void dropDown(String inputText, By locator){
         Select dropdownZtoA = new Select(findElement(locator));
         dropdownZtoA.selectByVisibleText(inputText);

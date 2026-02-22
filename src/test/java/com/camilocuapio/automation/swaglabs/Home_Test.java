@@ -6,10 +6,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import java.sql.ClientInfoStatus;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
@@ -80,5 +78,23 @@ public class Home_Test {
         assertEquals(expectedProductsZtoA, homePage.currentProductsName());
         System.out.println(homePage.currentProductsName());
         System.out.println(expectedProductsZtoA);
+    }
+    @Test
+    public void TC_06_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInAscendingOrder(){
+        List<String> expectedPrice=new ArrayList<>();
+
+        expectedPrice.add("$7.99");
+        expectedPrice.add("$9.99");
+        expectedPrice.add("$15.99");
+        expectedPrice.add("$15.99");
+        expectedPrice.add("$29.99");
+        expectedPrice.add("$49.99");
+
+
+        homePage.dropDownLowToHigh();
+        System.out.println("actuale"+homePage.currentPrice());
+        System.out.println("esperado"+expectedPrice);
+
+        assertEquals(expectedPrice,homePage.currentPrice());
     }
 }
