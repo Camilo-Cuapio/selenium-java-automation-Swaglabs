@@ -97,4 +97,20 @@ public class Home_Test {
 
         assertEquals(expectedPrice, homePage.currentPrice());
     }
+    @Test
+    public void TC_07_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInDescendingOrder(){
+        List<String> expectedPrice=new ArrayList<>();
+        expectedPrice.add("$49.99");
+        expectedPrice.add("$29.99");
+        expectedPrice.add("$15.99");
+        expectedPrice.add("$15.99");
+        expectedPrice.add("$9.99");
+        expectedPrice.add("$7.99");
+
+        homePage.dropDownHighToLow();
+        assertEquals(expectedPrice,homePage.currentPrice());
+
+        System.out.println("actual"+homePage.currentPrice());
+        System.out.println("expected"+expectedPrice);
+    }
 }

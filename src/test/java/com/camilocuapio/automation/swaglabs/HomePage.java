@@ -62,4 +62,7 @@ public class HomePage extends Base {
         }
         return priceList;
     }
+    public void dropDownHighToLow(){
+        dropDown("Price (high to low)", dropdownelement);
+    }
 }
