@@ -26,12 +26,13 @@ public class SignIn_Test {
     }
 
     //Close page
-   @After
+    @After
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
     }
+
     //Log in with correct credentials
     @Test
     public void TC_01_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() throws InterruptedException {
@@ -49,14 +50,14 @@ public class SignIn_Test {
         //iniciarSesionPagina.takeScreenshot("TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed"); //captura pantalla
     }
 
-@Test
-    public void TC_03_dadoQueSeIngresaContrasenaIncorrecta_cuandoElUsuarioIntentaIniciarSesion_entoncesLosBotonesXSeMuestranEnUsuarioContrasenaYMensajeDeError(){
-    signInPage.loginError();
-    assertEquals(1,signInPage.xBtnUser());
-    assertEquals(1,signInPage.xBtnPassword());
-    assertEquals(1,signInPage.xBtnMsjError());
-//iniciarSesionPagina.takeScreenshot("Validate that the “X” button is displayed.");    //Captura pantalla
-}
+    @Test
+    public void TC_03_givenCredentialsWithIncorrectPassword_whenUserAttemptsToLogIn_thenErrorIconsAreDisplayedInUsernameAndPasswordFieldsAndErrorMessageIsShown() {
+        signInPage.loginError();
+        assertEquals(1, signInPage.xBtnUser());
+        assertEquals(1, signInPage.xBtnPassword());
+        assertEquals(1, signInPage.xBtnMsjError());
+        //iniciarSesionPagina.takeScreenshot("Validate that the “X” button is displayed.");    //Captura pantalla
+    }
 
 }
 
