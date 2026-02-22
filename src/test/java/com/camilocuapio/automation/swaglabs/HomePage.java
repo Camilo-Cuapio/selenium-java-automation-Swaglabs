@@ -39,18 +39,15 @@ public class HomePage extends Base {
         return currentProduct;
     }
 
-    public void dropDownZtoA() {
-        //click On Dropdown And Select Z  ToA Option
-        Select dropdownZtoA = new Select(findElement(dropdownZtoAelement));
-        dropdownZtoA.selectByVisibleText("Name (Z to A)");
+    //click On Dropdown And Select Z  ToA Option
+   public void dropDownZtoA() {
+       dropDown("Name (Z to A)", dropdownZtoAelement);
 
     }
-
+//get Product List Sorted In Descending Order
     public List<String> currentProductsZtoA() {
-
-
         explicitWaitsCollection(listProductElementZtoA);
-
+// Capture the elements
         List<WebElement> currentProductelementZtoA = findElements(listProductElementZtoA);
         List<String> currentProcductZtoA = new ArrayList<>();
 

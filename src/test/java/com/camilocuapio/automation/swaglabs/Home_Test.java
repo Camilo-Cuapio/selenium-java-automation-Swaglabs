@@ -31,9 +31,6 @@ public class Home_Test {
             // Ahora sí podemos ir a HomePage
 
 
-
-
-
             homePage = new HomePage(driver);
         } else {
             throw new RuntimeException("The WebDriver could not be started. Check your Chrome version.");
@@ -41,7 +38,7 @@ public class Home_Test {
     }
 
     //Close page
-   @After
+    @After
     public void tearDown() {
         if (driver != null) {
             driver.quit();
@@ -51,7 +48,7 @@ public class Home_Test {
     @Test
     public void TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible() {
 
-
+//Expected product list A to Z
         List<String> expectedProducts = new ArrayList<>();
         expectedProducts.add("Test.allTheThings() T-Shirt (Red)");
         expectedProducts.add("Sauce Labs Backpack");
@@ -62,21 +59,26 @@ public class Home_Test {
 
         //sortProductListInAscendingOrder
         Collections.sort(expectedProducts);
-
-assertEquals(expectedProducts,homePage.currentProductsNameAtoZ());
+//Validate expected product list against actual
+        assertEquals(expectedProducts, homePage.currentProductsNameAtoZ());
     }
+
     @Test
-    public void TC_05_givenCurrentProductList_whenComparedWithExpectedList_thenProductsAreInZToAOrder(){
-        List<String> expectedProductsZtoA=new ArrayList<>();
+    public void TC_05_givenCurrentProductList_whenComparedWithExpectedList_thenProductsAreInZToAOrder() {
+        //Expected product list Z to A
+        List<String> expectedProductsZtoA = new ArrayList<>();
+        expectedProductsZtoA.add("Sauce Labs Bike Light");
+        expectedProductsZtoA.add("Sauce Labs Backpack");
         expectedProductsZtoA.add("Test.allTheThings() T-Shirt (Red)");
         expectedProductsZtoA.add("Sauce Labs Onesie");
         expectedProductsZtoA.add("Sauce Labs Fleece Jacket");
         expectedProductsZtoA.add("Sauce Labs Bolt T-Shirt");
-        expectedProductsZtoA.add("Sauce Labs Bike Light");
-        expectedProductsZtoA.add("Sauce Labs Backpack");
 
-       homePage.dropDownZtoA();
-
-  assertEquals(expectedProductsZtoA,homePage.currentProductsZtoA());
+        Collections.sort(expectedProductsZtoA,Collections.reverseOrder());
+        homePage.dropDownZtoA();
+//Validate expected product list against actual
+        assertEquals(expectedProductsZtoA, homePage.currentProductsZtoA());
+        System.out.println(homePage.currentProductsNameAtoZ());
+        System.out.println(expectedProductsZtoA);
     }
 }
