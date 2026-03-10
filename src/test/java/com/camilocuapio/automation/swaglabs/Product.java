@@ -1,7 +1,7 @@
 package com.camilocuapio.automation.swaglabs;
 
 public class Product {
-
+// Product
     private String name;
     private String price;
     private String description;
