@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -20,6 +21,10 @@ public class Base {
 
 
     private WebDriver driver;
+private String name;
+private String Descrip;
+private String precio;
+
 
     public Base() {
 
@@ -27,6 +32,7 @@ public class Base {
 
     public Base(WebDriver driver) {
         this.driver = driver;
+
     }
 
     public WebDriver chromeDriverConnection() {
@@ -141,5 +147,7 @@ public class Base {
         driver.manage().timeouts()
                 .implicitlyWait(Duration.ofSeconds(seconds));
     }
+
+
 
 }

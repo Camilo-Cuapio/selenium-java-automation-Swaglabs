@@ -13,13 +13,14 @@ import java.util.List;
 
 public class HomePage extends Base {
 
-    //Locate products from current list
-    By listProductElement = By.cssSelector(".inventory_item_name");
     //locate Dropdown
     By dropdownelement = By.cssSelector(".product_sort_container");
-
-
-    By currentPriceListElement = By.cssSelector(".inventory_item_price");
+    //Locate products from current list
+    By listNameElement = By.cssSelector(".inventory_item_name");
+    //locate price list item
+    By listPriceElement = By.cssSelector(".inventory_item_price");
+    //locate product description elements
+    By listDescriptionElement = By.cssSelector(".inventory_item_desc");
 
 
     public HomePage(WebDriver driver) {
@@ -29,16 +30,37 @@ public class HomePage extends Base {
     //current list of products
     public List<String> currentProductsName() {
         // Explicit wait to ensure that the elements are loaded
-        explicitWaitsCollection(listProductElement);
+        explicitWaitsCollection(listNameElement);
 
         // Capture the elements
-        List<WebElement> currentProductelement = findElements(listProductElement);
+        List<WebElement> currentProductelement = findElements(listNameElement);
         List<String> currentProduct = new ArrayList<>();
 
         for (WebElement element : currentProductelement) {
             currentProduct.add(element.getText().trim());//trim clean spaces
         }
         return currentProduct;
+    }
+
+    //prie list
+    public List<String> currentPrice() {
+        explicitWaitsCollection(listPriceElement);
+        List<WebElement> priceListElement = findElements(listPriceElement);
+        List<String> priceList = new ArrayList<>();
+        for (WebElement price : priceListElement) {
+            priceList.add(price.getText().trim());
+        }
+        return priceList;
+    }
+
+    public List<String> currentDescription() {
+        explicitWaitsCollection(listDescriptionElement);
+        List<WebElement> currentDescriptionElement=findElements(listDescriptionElement);
+        List<String> currentDescription=new ArrayList<>();
+        for(WebElement description:currentDescriptionElement){
+currentDescription.add(description.getText().trim());
+        }
+        return currentDescription;
     }
 
     //click On Dropdown And Select Z To A Option
@@ -52,17 +74,13 @@ public class HomePage extends Base {
         dropDown("Price (low to high)", dropdownelement);
     }
 
-    //prie list
-    public List<String> currentPrice() {
-        explicitWaitsCollection(currentPriceListElement);
-        List<WebElement> priceListElement = findElements(currentPriceListElement);
-        List<String> priceList = new ArrayList<>();
-        for (WebElement price : priceListElement) {
-            priceList.add(price.getText().trim());
-        }
-        return priceList;
-    }
-    public void dropDownHighToLow(){
+    public void dropDownHighToLow() {
         dropDown("Price (high to low)", dropdownelement);
     }
+
+public List<String> namePriceDescription(){
+        List<WebElement> nameelement=findElements()
 }
+}
+
+

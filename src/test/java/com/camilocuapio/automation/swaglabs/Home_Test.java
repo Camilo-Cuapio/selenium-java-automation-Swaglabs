@@ -1,9 +1,11 @@
 package com.camilocuapio.automation.swaglabs;
 
+import com.sun.tools.javac.Main;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.sql.ClientInfoStatus;
 import java.util.*;
@@ -14,6 +16,8 @@ import static org.junit.Assert.assertEquals;
 public class Home_Test {
     private WebDriver driver;
     HomePage homePage;
+
+    List<String> prueba;
 
     @Before
     public void setUp() {
@@ -97,9 +101,10 @@ public class Home_Test {
 
         assertEquals(expectedPrice, homePage.currentPrice());
     }
+
     @Test
-    public void TC_07_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInDescendingOrder(){
-        List<String> expectedPrice=new ArrayList<>();
+    public void TC_07_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInDescendingOrder() {
+        List<String> expectedPrice = new ArrayList<>();
         expectedPrice.add("$49.99");
         expectedPrice.add("$29.99");
         expectedPrice.add("$15.99");
@@ -108,9 +113,16 @@ public class Home_Test {
         expectedPrice.add("$7.99");
 
         homePage.dropDownHighToLow();
-        assertEquals(expectedPrice,homePage.currentPrice());
+        assertEquals(expectedPrice, homePage.currentPrice());
 
-        System.out.println("actual"+homePage.currentPrice());
-        System.out.println("expected"+expectedPrice);
+        System.out.println("actual" + homePage.currentPrice());
+        System.out.println("expected" + expectedPrice);
     }
+
+    @Test
+    public void namePrice() {
+
+
+    }
+
 }
