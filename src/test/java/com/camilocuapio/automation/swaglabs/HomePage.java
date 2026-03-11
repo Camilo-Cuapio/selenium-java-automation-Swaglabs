@@ -55,10 +55,10 @@ public class HomePage extends Base {
 
     public List<String> currentDescription() {
         explicitWaitsCollection(listDescriptionElement);
-        List<WebElement> currentDescriptionElement=findElements(listDescriptionElement);
-        List<String> currentDescription=new ArrayList<>();
-        for(WebElement description:currentDescriptionElement){
-currentDescription.add(description.getText().trim());
+        List<WebElement> currentDescriptionElement = findElements(listDescriptionElement);
+        List<String> currentDescription = new ArrayList<>();
+        for (WebElement description : currentDescriptionElement) {
+            currentDescription.add(description.getText().trim());
         }
         return currentDescription;
     }
@@ -78,9 +78,22 @@ currentDescription.add(description.getText().trim());
         dropDown("Price (high to low)", dropdownelement);
     }
 
-public List<String> namePriceDescription(){
-        List<WebElement> nameelement=findElements()
-}
+    public List<Product> namePriceDescription() {
+        List<WebElement> actualNameElement = findElements(listNameElement);
+        List<WebElement> actualPriceElement = findElements(listPriceElement);
+        List<WebElement> actualDescriptionElement = findElements(listDescriptionElement);
+
+        List<Product> products = new ArrayList<>();
+        for (int i = 0; i < actualNameElement.size(); i++) {
+            products.add(new Product(
+                            actualNameElement.get(i).getText(),
+                            actualPriceElement.get(i).getText(),
+                            actualDescriptionElement.get(i).getText()
+                    )
+            );
+        }
+        return products;
+    }
 }
 
 
