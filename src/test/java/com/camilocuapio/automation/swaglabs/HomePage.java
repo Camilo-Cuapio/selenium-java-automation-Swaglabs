@@ -83,6 +83,7 @@ public class HomePage extends Base {
         List<WebElement> actualPriceElement = findElements(listPriceElement);
         List<WebElement> actualDescriptionElement = findElements(listDescriptionElement);
 
+        int size = Math.min(actualNameElement.size(), Math.min(actualPriceElement.size(), actualDescriptionElement.size()));
         List<Product> products = new ArrayList<>();
         for (int i = 0; i < actualNameElement.size(); i++) {
             products.add(new Product(

@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
-public class Home_Test extends TestData{
+public class Home_Test{
     private WebDriver driver;
     HomePage homePage;
 
@@ -124,7 +124,7 @@ public class Home_Test extends TestData{
 
 
 
-       List<Product> expectedProducts=getBaseProducts();
+       List<Product> expectedProducts=TestData.getBaseProducts();
 
        List<Product> actualProducts=homePage.actualNamePriceDescription();
 

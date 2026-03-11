@@ -1,6 +1,7 @@
 package com.camilocuapio.automation.swaglabs;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class TestData {
@@ -42,5 +43,37 @@ public class TestData {
         ));
         return expectedNamePriceDescription;
     }
+
+
+    // Sort by name
+    public static List<Product> getProductsSortedByName(boolean ascending) {
+        List<Product> products = new ArrayList<>(getBaseProducts());
+
+        Comparator<Product> comparator = Comparator.comparing(Product::getName);
+
+        if (!ascending) {
+            comparator = comparator.reversed();
+        }
+
+        products.sort(comparator);
+        return products;
+    }
+
+    // Sort by price
+    public static List<Product> getProductsSortedByPrice(boolean ascending) {
+        List<Product> products = new ArrayList<>(getBaseProducts());
+
+        Comparator<Product> comparator =
+                Comparator.comparingDouble(p -> Double.parseDouble(p.getPrice().replace("$", "")));
+
+        if (!ascending) {
+            comparator = comparator.reversed();
+        }
+
+        products.sort(comparator);
+
+        return products;
+    }
 }
+
 
