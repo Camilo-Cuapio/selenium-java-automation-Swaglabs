@@ -29,7 +29,11 @@ public class Product {
         return description;
     }
 
-/*
+
+
+
+
+    /*
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -40,6 +44,10 @@ public class Product {
         return Objects.equals(name, product.name) &&
                 Objects.equals(price, product.price) &&
                 Objects.equals(description, product.description);
+    }
+        @Override
+    public int hashCode() {
+        return Objects.hash(name, price, description);
     }
 
     @Override
