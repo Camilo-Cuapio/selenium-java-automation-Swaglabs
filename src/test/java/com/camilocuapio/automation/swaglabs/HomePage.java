@@ -78,7 +78,7 @@ public class HomePage extends Base {
         dropDown("Price (high to low)", dropdownelement);
     }
 
-    public List<Product> namePriceDescription() {
+    public List<Product> actualNamePriceDescription() {
         List<WebElement> actualNameElement = findElements(listNameElement);
         List<WebElement> actualPriceElement = findElements(listPriceElement);
         List<WebElement> actualDescriptionElement = findElements(listDescriptionElement);
