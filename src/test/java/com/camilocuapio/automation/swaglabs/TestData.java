@@ -6,6 +6,7 @@ import java.util.List;
 
 public class TestData {
 
+//List of expected products, including name, price, and description
     public static List<Product> getBaseProducts() {
 
 

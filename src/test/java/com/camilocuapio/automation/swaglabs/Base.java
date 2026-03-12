@@ -19,9 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class Base {
 
 
-
     private WebDriver driver;
-
 
 
     public Base() {
@@ -51,11 +49,6 @@ public class Base {
         }
         return driver;
     }
-
-
-
-
-
 
     //Find an element
     public WebElement findElement(By locator) {
@@ -112,8 +105,9 @@ public class Base {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-//Dropdown
-    public void dropDown(String inputText, By locator){
+
+    //Dropdown
+    public void dropDown(String inputText, By locator) {
         Select dropdownZtoA = new Select(findElement(locator));
         dropdownZtoA.selectByVisibleText(inputText);
     }
@@ -123,7 +117,6 @@ public class Base {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
-
 
 
     // Screenshot of each test
@@ -145,7 +138,6 @@ public class Base {
         driver.manage().timeouts()
                 .implicitlyWait(Duration.ofSeconds(seconds));
     }
-
 
 
 }
