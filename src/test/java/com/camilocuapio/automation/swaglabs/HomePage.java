@@ -27,17 +27,6 @@ public class HomePage extends Base {
         super(driver);
     }
 
-    //prie list
-    public List<String> currentPrice() {
-        explicitWaitsCollection(listPriceElement);
-        List<WebElement> priceListElement = findElements(listPriceElement);
-        List<String> priceList = new ArrayList<>();
-        for (WebElement price : priceListElement) {
-            priceList.add(price.getText().trim());
-        }
-        return priceList;
-    }
-
     public List<String> currentDescription() {
         explicitWaitsCollection(listDescriptionElement);
         List<WebElement> currentDescriptionElement = findElements(listDescriptionElement);
