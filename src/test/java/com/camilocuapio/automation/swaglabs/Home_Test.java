@@ -69,20 +69,10 @@ public class Home_Test {
     @Test
     public void TC_05_givenCurrentProductList_whenComparedWithExpectedList_thenProductsAreInZToAOrder() {
         //Expected product list Z to A
-        List<String> expectedProductsZtoA = new ArrayList<>();
-        expectedProductsZtoA.add("Sauce Labs Bike Light");
-        expectedProductsZtoA.add("Sauce Labs Backpack");
-        expectedProductsZtoA.add("Test.allTheThings() T-Shirt (Red)");
-        expectedProductsZtoA.add("Sauce Labs Onesie");
-        expectedProductsZtoA.add("Sauce Labs Fleece Jacket");
-        expectedProductsZtoA.add("Sauce Labs Bolt T-Shirt");
-
-        Collections.sort(expectedProductsZtoA, Collections.reverseOrder());
         homePage.dropDownZtoA();
-//Validate expected product list against actual
-        assertEquals(expectedProductsZtoA, homePage.currentProductsName());
-        System.out.println(homePage.currentProductsName());
-        System.out.println(expectedProductsZtoA);
+        List<Product> expectedProducts = TestData.getProductsSortedByName(false);
+        List<Product> actualProducts = homePage.actualNamePriceDescription();
+        assertEquals(expectedProducts, actualProducts);
     }
 
     @Test
