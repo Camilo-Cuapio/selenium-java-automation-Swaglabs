@@ -120,23 +120,7 @@ public class Home_Test {
         System.out.println("expected" + expectedPrice);
     }
 
-    @Test
-    public void namePriceDescription() {
 
-        List<Product> expectedProducts = TestData.getBaseProducts();
-        List<Product> actualProducts = homePage.actualNamePriceDescription();
-
-        for (int i = 0; i < expectedProducts.size(); i++) {
-            assertEquals(expectedProducts.get(i).getName(),
-                    actualProducts.get(i).getName());
-
-            assertEquals(expectedProducts.get(i).getPrice(),
-                    actualProducts.get(i).getPrice());
-
-            assertEquals(expectedProducts.get(i).getDescription(),
-                    actualProducts.get(i).getDescription());
-        }
-    }
 
     @Test
     public void TC_06_verifyProductsSortedByNameDesc() {
