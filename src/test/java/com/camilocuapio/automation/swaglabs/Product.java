@@ -3,11 +3,11 @@ package com.camilocuapio.automation.swaglabs;
 import java.util.Objects;
 
 public class Product {
-// Product
+// product variable
     private String name;
     private String price;
     private String description;
-
+//builder
     public Product() {
     }
 
@@ -16,7 +16,7 @@ public class Product {
         this.price = price;
         this.description = description;
     }
-
+//Getters
     public String getName() {
         return name;
     }
@@ -33,7 +33,7 @@ public class Product {
 
 
 
-
+//Methods to validate that Product objects are equal
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
