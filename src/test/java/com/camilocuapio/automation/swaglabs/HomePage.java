@@ -22,7 +22,7 @@ public class HomePage extends Base {
     //locate product description elements
     By listDescriptionElement = By.cssSelector(".inventory_item_desc");
     //locate shopping cart element
-    By ShoppingcartElement = By.cssSelector(".shopping_cart_link");
+    By shoppingCartElement = By.cssSelector(".shopping_cart_link");
 //Btn add to cart
     By addToCartElement=By.cssSelector("#add-to-cart-sauce-labs-backpack");
 
@@ -75,7 +75,11 @@ public class HomePage extends Base {
         return products;
     }
 
-    public
+    public int addProductToCart(){
+        click(addToCartElement);
+        String count = findElement(shoppingCartElement).getText();
+        return Integer.parseInt(count);
+    }
 }
 
 
