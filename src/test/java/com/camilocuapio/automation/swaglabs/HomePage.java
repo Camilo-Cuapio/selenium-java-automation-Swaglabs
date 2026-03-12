@@ -75,11 +75,15 @@ public class HomePage extends Base {
         return products;
     }
 
-    public int addProductToCart(){
+    public void addProductToCart(){
         click(addToCartElement);
+
+    }
+    public int countShoppingCart(){
         String count = findElement(shoppingCartElement).getText();
         return Integer.parseInt(count);
     }
+
 }
 
 
