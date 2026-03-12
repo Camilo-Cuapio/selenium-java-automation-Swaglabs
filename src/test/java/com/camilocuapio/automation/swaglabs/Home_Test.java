@@ -79,18 +79,10 @@ public class Home_Test {
     public void TC_06_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInAscendingOrder() {
         List<String> expectedPrice = new ArrayList<>();
 
-        expectedPrice.add("$7.99");
-        expectedPrice.add("$9.99");
-        expectedPrice.add("$15.99");
-        expectedPrice.add("$15.99");
-        expectedPrice.add("$29.99");
-        expectedPrice.add("$49.99");
-
         homePage.dropDownLowToHigh();
-        System.out.println("actuale" + homePage.currentPrice());
-        System.out.println("esperado" + expectedPrice);
-
-        assertEquals(expectedPrice, homePage.currentPrice());
+        List<Product> expectedProducts = TestData.getProductsSortedByPrice(true);
+        List<Product> actualProducts = homePage.actualNamePriceDescription();
+        assertEquals(expectedProducts, actualProducts);
     }
 
     @Test
