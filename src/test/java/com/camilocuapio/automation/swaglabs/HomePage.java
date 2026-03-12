@@ -21,6 +21,11 @@ public class HomePage extends Base {
     By listPriceElement = By.cssSelector(".inventory_item_price");
     //locate product description elements
     By listDescriptionElement = By.cssSelector(".inventory_item_desc");
+    //locate shopping cart element
+    By ShoppingcartElement = By.cssSelector(".shopping_cart_link");
+//Btn add to cart
+    By addToCartElement=By.cssSelector("#add-to-cart-sauce-labs-backpack");
+
 
 
     public HomePage(WebDriver driver) {
@@ -69,6 +74,8 @@ public class HomePage extends Base {
         }
         return products;
     }
+
+    public
 }
 
 
