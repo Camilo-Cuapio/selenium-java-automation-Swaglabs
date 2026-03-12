@@ -94,10 +94,11 @@ public class Home_Test {
         assertEquals(expectedProducts, actualProducts);
 
     }
-    @Test
-    public void TC_08_givenUserIsOnProductsPage_whenUserAddsProductToCart_thenProductIsAddedToCart(){
-        homePage.addProductToCart();
 
+    @Test
+    public void TC_08_givenUserIsOnProductsPage_whenUserAddsProductToCart_thenProductIsAddedToCart() {
+        homePage.addProductToCart();
+        homePage.countShoppingCart();
     }
 
 }
