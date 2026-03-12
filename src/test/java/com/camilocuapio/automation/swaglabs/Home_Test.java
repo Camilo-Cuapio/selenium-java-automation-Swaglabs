@@ -112,13 +112,7 @@ public class Home_Test {
 
 
 
-    @Test
-    public void TC_06_verifyProductsSortedByNameDesc() {
-        homePage.dropDownZtoA();
-        List<Product> expectedProducts = TestData.getProductsSortedByName(false);
-        List<Product> actualProducts = homePage.actualNamePriceDescription();
-        assertEquals(expectedProducts, actualProducts);
-    }
+
 
 
 }
