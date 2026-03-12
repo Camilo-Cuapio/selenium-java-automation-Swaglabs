@@ -25,7 +25,8 @@ public class HomePage extends Base {
     By shoppingCartElement = By.cssSelector(".shopping_cart_link");
 //Btn add to cart
     By addToCartElement=By.cssSelector("#add-to-cart-sauce-labs-backpack");
-
+//Btn Remove
+By removeElement=By.cssSelector("#remove-sauce-labs-backpack");
 
 
     public HomePage(WebDriver driver) {
@@ -82,6 +83,9 @@ public class HomePage extends Base {
     public int countShoppingCart(){
         String count = findElement(shoppingCartElement).getText();
         return Integer.parseInt(count);
+    }
+    public boolean removeBtnDisplayed(){
+        return findElement(removeElement).isDisplayed();
     }
 
 }

@@ -92,13 +92,13 @@ public class Home_Test {
         List<Product> expectedProducts = TestData.getProductsSortedByPrice(false);
         List<Product> actualProducts = homePage.actualNamePriceDescription();
         assertEquals(expectedProducts, actualProducts);
-
     }
 
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsProductToCart_thenProductIsAddedToCart() {
         homePage.addProductToCart();
         homePage.countShoppingCart();
+        System.out.println("NumProductadd: " + homePage.countShoppingCart());
     }
 
 }
