@@ -104,6 +104,7 @@ public class Home_Test {
     }
 @Test
     public void TC_09_givenUserIsOnProductsPage_whenUserClicksAddButton_thenButtonChangesToRemove(){
+   homePage.addProductToCart();
     homePage.removeBtnDisplayed();
 }
 }
