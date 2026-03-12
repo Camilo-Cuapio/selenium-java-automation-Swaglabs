@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
-public class Home_Test{
+public class Home_Test {
     private WebDriver driver;
     HomePage homePage;
 
@@ -51,18 +51,19 @@ public class Home_Test{
     public void TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible() {
 
 //Expected product list A to Z
-        List<String> expectedProducts = new ArrayList<>();
-        expectedProducts.add("Test.allTheThings() T-Shirt (Red)");
-        expectedProducts.add("Sauce Labs Backpack");
-        expectedProducts.add("Sauce Labs Bike Light");
-        expectedProducts.add("Sauce Labs Bolt T-Shirt");
-        expectedProducts.add("Sauce Labs Fleece Jacket");
-        expectedProducts.add("Sauce Labs Onesie");
+        List<Product> expectedProducts = TestData.getBaseProducts();
+        List<Product> actualProducts = homePage.actualNamePriceDescription();
 
-        //sortProductListInAscendingOrder
-        Collections.sort(expectedProducts);
-//Validate expected product list against actual
-        assertEquals(expectedProducts, homePage.currentProductsName());
+        for (int i = 0; i < expectedProducts.size(); i++) {
+            assertEquals(expectedProducts.get(i).getName(),
+                    actualProducts.get(i).getName());
+
+            assertEquals(expectedProducts.get(i).getPrice(),
+                    actualProducts.get(i).getPrice());
+
+            assertEquals(expectedProducts.get(i).getDescription(),
+                    actualProducts.get(i).getDescription());
+        }
     }
 
     @Test
@@ -122,14 +123,10 @@ public class Home_Test{
     @Test
     public void namePriceDescription() {
 
-
-
-       List<Product> expectedProducts=TestData.getBaseProducts();
-
-       List<Product> actualProducts=homePage.actualNamePriceDescription();
+        List<Product> expectedProducts = TestData.getBaseProducts();
+        List<Product> actualProducts = homePage.actualNamePriceDescription();
 
         for (int i = 0; i < expectedProducts.size(); i++) {
-
             assertEquals(expectedProducts.get(i).getName(),
                     actualProducts.get(i).getName());
 
@@ -139,6 +136,14 @@ public class Home_Test{
             assertEquals(expectedProducts.get(i).getDescription(),
                     actualProducts.get(i).getDescription());
         }
+    }
+
+    @Test
+    public void TC_06_verifyProductsSortedByNameDesc() {
+        homePage.dropDownZtoA();
+        List<Product> expectedProducts = TestData.getProductsSortedByName(false);
+        List<Product> actualProducts = homePage.actualNamePriceDescription();
+        assertEquals(expectedProducts, actualProducts);
     }
 
 
