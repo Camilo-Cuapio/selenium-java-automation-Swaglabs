@@ -99,6 +99,11 @@ public class Home_Test {
         homePage.addProductToCart();
         homePage.countShoppingCart();
         System.out.println("NumProductadd: " + homePage.countShoppingCart());
-    }
 
+
+    }
+@Test
+    public void TC_09_givenUserIsOnProductsPage_whenUserClicksAddButton_thenButtonChangesToRemove(){
+    homePage.removeBtnDisplayed();
+}
 }
