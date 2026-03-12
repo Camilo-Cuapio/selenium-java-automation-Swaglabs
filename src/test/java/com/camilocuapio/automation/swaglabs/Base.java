@@ -21,9 +21,7 @@ public class Base {
 
 
     private WebDriver driver;
-private String name;
-private String Descrip;
-private String precio;
+
 
 
     public Base() {
