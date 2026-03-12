@@ -27,21 +27,6 @@ public class HomePage extends Base {
         super(driver);
     }
 
-    //current list of products
-    public List<String> currentProductsName() {
-        // Explicit wait to ensure that the elements are loaded
-        explicitWaitsCollection(listNameElement);
-
-        // Capture the elements
-        List<WebElement> currentProductelement = findElements(listNameElement);
-        List<String> currentProduct = new ArrayList<>();
-
-        for (WebElement element : currentProductelement) {
-            currentProduct.add(element.getText().trim());//trim clean spaces
-        }
-        return currentProduct;
-    }
-
     //prie list
     public List<String> currentPrice() {
         explicitWaitsCollection(listPriceElement);
