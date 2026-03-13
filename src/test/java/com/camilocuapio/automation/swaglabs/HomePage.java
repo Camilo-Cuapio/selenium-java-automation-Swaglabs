@@ -76,18 +76,16 @@ By removeElement=By.cssSelector("//button[contains(text(),'Remove')]");
         return products;
     }
 
-    public void addProductToCart(){
-        click(addToCartElement);
-
+    public List<WebElement> btnAddToCart(){
+        return findElements(addToCartElement);
+    }
+    public List<WebElement> btnRemove(){
+        return findElements(removeElement);
     }
     public int countShoppingCart(){
         String count = findElement(shoppingCartElement).getText();
         return Integer.parseInt(count);
     }
-    public boolean removeBtnDisplayed(){
-        return findElement(removeElement).isDisplayed();
-    }
-
 }
 
 

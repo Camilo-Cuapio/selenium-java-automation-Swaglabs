@@ -96,7 +96,7 @@ public class Home_Test {
 
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsProductToCart_thenProductIsAddedToCart() {
-        homePage.addProductToCart();
+        homePage.btnAddToCart();
         homePage.countShoppingCart();
         System.out.println("NumProductadd: " + homePage.countShoppingCart());
 
@@ -104,7 +104,7 @@ public class Home_Test {
     }
 @Test
     public void TC_09_givenUserIsOnProductsPage_whenUserClicksAddButton_thenButtonChangesToRemove(){
-   homePage.addProductToCart();
-    homePage.removeBtnDisplayed();
+   homePage.btnAddToCart();
+    homePage.btnRemove();
 }
 }
