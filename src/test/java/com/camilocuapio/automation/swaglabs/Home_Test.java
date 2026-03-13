@@ -6,8 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.ClientInfoStatus;
+import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -94,7 +96,7 @@ public class Home_Test {
         assertEquals(expectedProducts, actualProducts);
     }
 
-    @Test
+ /*   @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsProductToCart_thenProductIsAddedToCart() {
         homePage.btnAddToCart();
         homePage.countShoppingCart();
@@ -106,5 +108,23 @@ public class Home_Test {
     public void TC_09_givenUserIsOnProductsPage_whenUserClicksAddButton_thenButtonChangesToRemove(){
    homePage.btnAddToCart();
     homePage.btnRemove();
+}*/
+@Test
+    public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenAllButtonsChangeToRemove(){
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+    int totalProducts = homePage.btnAddToCart().size();
+
+    for(int i = 1; i <= totalProducts; i++){
+
+        homePage.btnAddToCart().get(0).click();
+
+        int actualCount = homePage.countShoppingCart();
+        assertEquals(i, actualCount);
+    }
+
+    int removeButtons = homePage.btnRemove().size();
+    assertEquals(totalProducts, removeButtons);
+
 }
 }
