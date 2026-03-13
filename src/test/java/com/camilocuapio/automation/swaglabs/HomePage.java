@@ -24,9 +24,9 @@ public class HomePage extends Base {
     //locate shopping cart element
     By shoppingCartElement = By.cssSelector(".shopping_cart_link");
 //Btn add to cart
-    By addToCartElement=By.cssSelector("#add-to-cart-sauce-labs-backpack");
+    By addToCartElement=By.cssSelector("//button[contains(text(),'Add to cart')]");
 //Btn Remove
-By removeElement=By.cssSelector("#remove-sauce-labs-backpack");
+By removeElement=By.cssSelector("//button[contains(text(),'Remove')]");
 
 
     public HomePage(WebDriver driver) {
