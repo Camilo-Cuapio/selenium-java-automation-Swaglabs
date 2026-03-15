@@ -13,7 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
@@ -40,6 +42,24 @@ public class Base {
             // ChromeOptions
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
+
+            //// Configure Chrome to run with a clean profile for automation.
+            //// Disables notifications, infobars, and password manager features
+            //// (including password leak detection) to prevent pop-ups or interruptions.
+
+            options.addArguments("--incognito"); // clean session
+            options.addArguments("--disable-notifications");
+            options.addArguments("--disable-infobars");
+            options.addArguments("--disable-features=PasswordLeakDetection");
+
+            Map<String, Object> prefs = new HashMap<>();
+            prefs.put("credentials_enable_service", false);
+            prefs.put("profile.password_manager_enabled", false);
+            prefs.put("profile.password_manager_leak_detection", false);
+
+            options.setExperimentalOption("prefs", prefs);
+            //---------------
+
 
             driver = new ChromeDriver(options);
 

@@ -23,10 +23,10 @@ public class HomePage extends Base {
     By listDescriptionElement = By.cssSelector(".inventory_item_desc");
     //locate shopping cart element
     By shoppingCartElement = By.cssSelector(".shopping_cart_link");
-//Btn add to cart
-    By addToCartElement=By.xpath("//button[contains(text(),'Add to cart')]");
-//Btn Remove
-By removeElement=By.xpath("//button[contains(text(),'Remove')]");
+    //Btn add to cart
+    By addToCartElement = By.xpath("//button[contains(text(),'Add to cart')]");
+    //Btn Remove
+    By removeElement = By.xpath("//button[contains(text(),'Remove')]");
 
 
     public HomePage(WebDriver driver) {
@@ -76,16 +76,25 @@ By removeElement=By.xpath("//button[contains(text(),'Remove')]");
         return products;
     }
 
-    public List<WebElement> btnAddToCart(){
-        return findElements(addToCartElement);
+    public void btnAddToCart() {
+
+        List<WebElement> addToCart = findElements(addToCartElement);
+        for (WebElement total : addToCart) {
+            total.click();
+
+        }
+//Alternative 2 to select the add to cart buttons
+      /*while (findElements(addToCartElement).size() > 0) {
+            findElements(addToCartElement).get(0).click();
+        }*/
     }
-    public List<WebElement> btnRemove(){
-        return findElements(removeElement);
-    }
-    public int countShoppingCart(){
+
+    public int getCartItemCount() {
         String count = findElement(shoppingCartElement).getText();
         return Integer.parseInt(count);
     }
+
+
 }
 
 
