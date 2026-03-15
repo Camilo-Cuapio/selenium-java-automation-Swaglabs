@@ -97,19 +97,6 @@ public class Home_Test {
         assertEquals(expectedProducts, actualProducts);
     }
 
-    /*   @Test
-       public void TC_08_givenUserIsOnProductsPage_whenUserAddsProductToCart_thenProductIsAddedToCart() {
-           homePage.btnAddToCart();
-           homePage.countShoppingCart();
-           System.out.println("NumProductadd: " + homePage.countShoppingCart());
-
-
-       }
-   @Test
-       public void TC_09_givenUserIsOnProductsPage_whenUserClicksAddButton_thenButtonChangesToRemove(){
-      homePage.btnAddToCart();
-       homePage.btnRemove();
-   }*/
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart() {
       homePage.btnAddToCart();
