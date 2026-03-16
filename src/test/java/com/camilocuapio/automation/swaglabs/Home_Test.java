@@ -43,12 +43,12 @@ public class Home_Test {
     }
 
     //Close page
-   /* @After
+    @After
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
-    }*/
+    }
 
     @Test
     public void TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible() {
@@ -106,7 +106,7 @@ public class Home_Test {
            buttons.get(i).click();
            count++;
        }
-       assertEquals(buttons.size(),count);
+       assertEquals(homePage.getCartItemCount(),count);
 
         int removeCount = homePage.getbtnRemove();
         Assert.assertEquals(removeCount, 6);
