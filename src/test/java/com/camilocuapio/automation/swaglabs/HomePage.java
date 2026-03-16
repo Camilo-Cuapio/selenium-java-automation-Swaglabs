@@ -29,6 +29,8 @@ public class HomePage extends Base {
     By removeElement = By.xpath("//button[contains(text(),'Remove')]");
 
 
+    By btnAceptarPopup = By.xpath("//button[contains(text(),'Aceptar')]");
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -83,10 +85,6 @@ public class HomePage extends Base {
             total.click();
 
         }
-//Alternative 2 to select the add to cart buttons
-      /*while (findElements(addToCartElement).size() > 0) {
-            findElements(addToCartElement).get(0).click();
-        }*/
     }
 
     public int getCartItemCount() {
@@ -94,6 +92,20 @@ public class HomePage extends Base {
         return Integer.parseInt(count);
     }
 
+
+   /* public void closeChromePasswordPopup() {
+        try {
+
+            WebElement aceptar = wait.until(
+                    ExpectedConditions.elementToBeClickable(btnAceptarPopup)
+            );
+
+            aceptar.click();
+
+        } catch (Exception e) {
+            System.out.println("Popup no presente, continuar test.");
+        }
+    }*/
 
 }
 

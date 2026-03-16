@@ -99,9 +99,10 @@ public class Home_Test {
 
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart() {
-      homePage.btnAddToCart();
-      int numAddToCart= homePage.getCartItemCount();
-        Assert.assertEquals(numAddToCart,6);
+
+        homePage.btnAddToCart();
+        int numAddToCart = homePage.getCartItemCount();
+        Assert.assertEquals(numAddToCart, 6);
     }
 
 }

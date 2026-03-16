@@ -22,7 +22,7 @@ public class Base {
 
 
     private WebDriver driver;
-
+    protected WebDriverWait wait;
 
     public Base() {
 
@@ -30,7 +30,7 @@ public class Base {
 
     public Base(WebDriver driver) {
         this.driver = driver;
-
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     public WebDriver chromeDriverConnection() {
@@ -43,7 +43,7 @@ public class Base {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
 
-            //// Configure Chrome to run with a clean profile for automation.
+           //// Configure Chrome to run with a clean profile for automation.
             //// Disables notifications, infobars, and password manager features
             //// (including password leak detection) to prevent pop-ups or interruptions.
 
@@ -137,10 +137,7 @@ public class Base {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
     }
-    // Explicit wait
-    public void explicitWaits(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-    }
+
 
     // Screenshot of each test
     public void takeScreenshot(String name) {
