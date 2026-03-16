@@ -36,14 +36,14 @@ public class Base {
     public WebDriver chromeDriverConnection() {
         try {
 
-// Prepare the compatible ChromeDriver
+            // Prepare the compatible ChromeDriver
             WebDriverManager.chromedriver().setup();
 
             // ChromeOptions
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
 
-           //// Configure Chrome to run with a clean profile for automation.
+            //// Configure Chrome to run with a clean profile for automation.
             //// Disables notifications, infobars, and password manager features
             //// (including password leak detection) to prevent pop-ups or interruptions.
 

@@ -12,7 +12,7 @@ public class SignIn_Test {
     private WebDriver driver;
     SignInPage signInPage;
 
-    /// /Enter page
+    //Enter page
     @Before
     public void setUp() {
         Base base = new Base();

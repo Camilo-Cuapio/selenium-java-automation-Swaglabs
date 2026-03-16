@@ -16,13 +16,11 @@ import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
-public class Home_Test {
-    private WebDriver driver;
-    HomePage homePage;
+public class Home_Test extends BaseTest {
 
-    List<String> prueba;
+   private HomePage homePage;
 
-    @Before
+  /*  @Before
     public void setUp() {
         Base base = new Base();
         driver = base.chromeDriverConnection();
@@ -48,11 +46,11 @@ public class Home_Test {
         if (driver != null) {
             driver.quit();
         }
-    }
+    }*/
 
     @Test
     public void TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible() {
-
+homePage=new HomePage(driver);
 //Expected product list A to Z
         List<Product> expectedProducts = TestData.getBaseProducts();
         List<Product> actualProducts = homePage.actualNamePriceDescription();
@@ -71,6 +69,7 @@ public class Home_Test {
 
     @Test
     public void TC_05_givenCurrentProductList_whenComparedWithExpectedList_thenProductsAreInZToAOrder() {
+        homePage=new HomePage(driver);
         //Expected product list Z to A
         homePage.dropDownZtoA();
         List<Product> expectedProducts = TestData.getProductsSortedByName(false);
@@ -80,6 +79,7 @@ public class Home_Test {
 
     @Test
     public void TC_06_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInAscendingOrder() {
+        homePage=new HomePage(driver);
         List<String> expectedPrice = new ArrayList<>();
 
         homePage.dropDownLowToHigh();
@@ -90,7 +90,7 @@ public class Home_Test {
 
     @Test
     public void TC_07_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInDescendingOrder() {
-
+        homePage=new HomePage(driver);
         homePage.dropDownHighToLow();
         List<Product> expectedProducts = TestData.getProductsSortedByPrice(false);
         List<Product> actualProducts = homePage.actualNamePriceDescription();
@@ -99,7 +99,7 @@ public class Home_Test {
 
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart() {
-
+        homePage=new HomePage(driver);
        List<WebElement> buttons=homePage.btnAddToCart();
        int count=0;
        for (int i=0;i<buttons.size();i++){
