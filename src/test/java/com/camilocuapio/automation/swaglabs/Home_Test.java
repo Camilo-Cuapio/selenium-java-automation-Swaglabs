@@ -77,7 +77,7 @@ public class Home_Test extends BaseTest {
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart() {
 
-       List<WebElement> buttons=homePage.btnAddToCart();
+       List<WebElement> buttons=homePage.getbtnAddToCart();
        int count=0;
        for (int i=0;i<buttons.size();i++){
            buttons.get(i).click();

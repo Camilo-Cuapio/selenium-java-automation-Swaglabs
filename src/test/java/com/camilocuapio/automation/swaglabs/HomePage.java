@@ -29,7 +29,6 @@ public class HomePage extends Base {
     By removeElement = By.xpath("//button[contains(text(),'Remove')]");
 
 
-    By btnAceptarPopup = By.xpath("//button[contains(text(),'Aceptar')]");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -78,7 +77,7 @@ public class HomePage extends Base {
         return products;
     }
 
-    public List<WebElement> btnAddToCart() {
+    public List<WebElement> getbtnAddToCart() {
         return findElements(addToCartElement);
         }
 
@@ -95,22 +94,6 @@ public class HomePage extends Base {
 
     }
 
-
-
-
-   /*public void closeChromePasswordPopup() {
-        try {
-
-            WebElement aceptar = wait.until(
-                    ExpectedConditions.elementToBeClickable(btnAceptarPopup)
-            );
-
-            aceptar.click();
-
-        } catch (Exception e) {
-            System.out.println("Popup no presente, continuar test.");
-        }
-    }*/
 
 }
 
