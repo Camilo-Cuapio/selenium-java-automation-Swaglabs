@@ -103,6 +103,10 @@ public class Home_Test {
         homePage.btnAddToCart();
         int numAddToCart = homePage.getCartItemCount();
         Assert.assertEquals(numAddToCart, 6);
+
+        int removeCount = homePage.getbtnRemove();
+        Assert.assertEquals(removeCount, 6);
+
     }
 
 }

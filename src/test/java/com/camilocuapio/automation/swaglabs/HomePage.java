@@ -79,12 +79,10 @@ public class HomePage extends Base {
     }
 
     public void btnAddToCart() {
-
         List<WebElement> addToCart = findElements(addToCartElement);
-        for (WebElement total : addToCart) {
-            total.click();
-
-        }
+      for (WebElement total:addToCart){
+           total.click();
+       }
     }
 
     public int getCartItemCount() {
@@ -92,8 +90,17 @@ public class HomePage extends Base {
         return Integer.parseInt(count);
     }
 
+    public int getbtnRemove() {
 
-   /* public void closeChromePasswordPopup() {
+        List<WebElement> remove = findElements(removeElement);
+        return remove.size();
+
+    }
+
+
+
+
+   /*public void closeChromePasswordPopup() {
         try {
 
             WebElement aceptar = wait.until(
@@ -108,5 +115,6 @@ public class HomePage extends Base {
     }*/
 
 }
+
 
 
