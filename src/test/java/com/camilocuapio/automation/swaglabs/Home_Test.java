@@ -20,34 +20,6 @@ public class Home_Test extends BaseTest {
 
    private HomePage homePage;
 
-  /*  @Before
-    public void setUp() {
-        Base base = new Base();
-        driver = base.chromeDriverConnection();
-        if (driver != null) {
-
-
-            // Creamos la página de login
-            SignInPage signInPage = new SignInPage(driver);
-            signInPage.visit("https://www.saucedemo.com/");
-            signInPage.login(); // LOGIN explícito
-            // Ahora sí podemos ir a HomePage
-
-
-            homePage = new HomePage(driver);
-        } else {
-            throw new RuntimeException("The WebDriver could not be started. Check your Chrome version.");
-        }
-    }
-
-    //Close page
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }*/
-
     @Test
     public void TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible() {
 homePage=new HomePage(driver);
