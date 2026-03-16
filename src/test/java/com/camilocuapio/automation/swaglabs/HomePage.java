@@ -78,12 +78,10 @@ public class HomePage extends Base {
         return products;
     }
 
-    public void btnAddToCart() {
-        List<WebElement> addToCart = findElements(addToCartElement);
-      for (WebElement total:addToCart){
-           total.click();
-       }
-    }
+    public List<WebElement> btnAddToCart() {
+        return findElements(addToCartElement);
+        }
+
 
     public int getCartItemCount() {
         String count = findElement(shoppingCartElement).getText();

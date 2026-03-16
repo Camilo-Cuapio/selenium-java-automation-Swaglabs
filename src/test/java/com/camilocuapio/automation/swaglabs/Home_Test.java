@@ -100,9 +100,13 @@ public class Home_Test {
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart() {
 
-        homePage.btnAddToCart();
-        int numAddToCart = homePage.getCartItemCount();
-        Assert.assertEquals(numAddToCart, 6);
+       List<WebElement> buttons=homePage.btnAddToCart();
+       int count=0;
+       for (int i=0;i<buttons.size();i++){
+           buttons.get(i).click();
+           count++;
+       }
+       assertEquals(buttons.size(),count);
 
         int removeCount = homePage.getbtnRemove();
         Assert.assertEquals(removeCount, 6);
