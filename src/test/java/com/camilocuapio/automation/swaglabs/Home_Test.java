@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.ClientInfoStatus;
+import java.sql.SQLOutput;
 import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -76,20 +77,20 @@ public class Home_Test extends BaseTest {
     }
 
     @Test
-    public void TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero(){
-
-        List<WebElement> buttons = homePage.getbtnAddToCart();
+    public void TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero() {
+//
+        List<WebElement> buttonsAdd = homePage.getbtnAddToCart();
         int countAdd = 0;
-        for (int i = 0; i < buttons.size(); i++) {
-            buttons.get(i).click();
+        for (int i = 0; i < buttonsAdd.size(); i++) {
+            buttonsAdd.get(i).click();
             countAdd++;
         }
         assertEquals(homePage.getCartItemCount(), countAdd);
-
+//
         int removeCount = homePage.getbtnRemove().size();
-        Assert.assertEquals(removeCount, 6);
+        Assert.assertEquals(6, removeCount);
 
-
+//
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         while (homePage.getbtnRemove().size() > 0) {
@@ -99,7 +100,30 @@ public class Home_Test extends BaseTest {
         }
         Assert.assertEquals(0, homePage.getbtnRemove().size());
     }
-}
+
+    @Test
+    public void TC_09_shouldKeepOnlyOneProductInCartAfterAddingThreeAndRemovingTwo() {
+        List<WebElement> buttons = homePage.getbtnAddToCart();
+
+        int[] indexes = {0, 2, 5};
+        int expectedCount = indexes.length;
+
+        for (int index : indexes) {
+            buttons.get(index).click();
+        }
+
+        Assert.assertEquals(homePage.getCartItemCount(), expectedCount);
+        Assert.assertEquals(homePage.getbtnRemove().size(), expectedCount);
+
+        homePage.getbtnRemove().get(0).click();
+        homePage.getbtnRemove().get(1).click();
+
+        Assert.assertEquals(homePage.getCartItemCount(), expectedCount - 2);
+        Assert.assertEquals(homePage.getbtnRemove().size(), expectedCount - 2);
+        }
+    }
+
+
 
 
 
