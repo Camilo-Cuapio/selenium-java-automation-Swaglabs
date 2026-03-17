@@ -76,7 +76,7 @@ public class Home_Test extends BaseTest {
     }
 
     @Test
-    public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart() {
+    public void TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero(){
 
         List<WebElement> buttons = homePage.getbtnAddToCart();
         int countAdd = 0;
