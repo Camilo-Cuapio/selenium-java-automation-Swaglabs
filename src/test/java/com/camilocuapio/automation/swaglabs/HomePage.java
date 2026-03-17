@@ -53,11 +53,11 @@ public class HomePage extends Base {
     public void dropDownLowToHigh() {
         dropDown("Price (low to high)", dropdownelement);
     }
-
+    //Click on the drop-down menu and select the high to low option.
     public void dropDownHighToLow() {
         dropDown("Price (high to low)", dropdownelement);
     }
-
+//List of products with item name, price and description
     public List<Product> actualNamePriceDescription() {
         List<WebElement> actualNameElement = findElements(listNameElement);
         List<WebElement> actualPriceElement = findElements(listPriceElement);
@@ -75,17 +75,17 @@ public class HomePage extends Base {
         }
         return products;
     }
-
+//List of elements of the add to cart button
     public List<WebElement> getbtnAddToCart() {
         return findElements(addToCartElement);
     }
 
-
+//visible number of products added to the shopping cart
     public int getCartItemCount() {
         String count = findElement(shoppingCartElement).getText();
         return Integer.parseInt(count);
     }
-
+//list of elements of the remove button
     public List<WebElement> getbtnRemove() {
 
         return findElements(removeElement);
