@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.ClientInfoStatus;
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Home_Test extends BaseTest {
 
-   private HomePage homePage;
+    private HomePage homePage;
 
     @Before
     public void setupPage() {
@@ -77,19 +78,27 @@ public class Home_Test extends BaseTest {
     @Test
     public void TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart() {
 
-       List<WebElement> buttons=homePage.getbtnAddToCart();
-       int count=0;
-       for (int i=0;i<buttons.size();i++){
-           buttons.get(i).click();
-           count++;
-       }
-       assertEquals(homePage.getCartItemCount(),count);
+        List<WebElement> buttons = homePage.getbtnAddToCart();
+        int countAdd = 0;
+        for (int i = 0; i < buttons.size(); i++) {
+            buttons.get(i).click();
+            countAdd++;
+        }
+        assertEquals(homePage.getCartItemCount(), countAdd);
 
-        int removeCount = homePage.getbtnRemove();
+        int removeCount = homePage.getbtnRemove().size();
         Assert.assertEquals(removeCount, 6);
 
-    }
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        while (homePage.getbtnRemove().size() > 0) {
+            WebElement btn = homePage.getbtnRemove().get(0);
+            btn.click();
+            wait.until(ExpectedConditions.stalenessOf(btn));
+        }
+        Assert.assertEquals(0, homePage.getbtnRemove().size());
+    }
 }
 
 

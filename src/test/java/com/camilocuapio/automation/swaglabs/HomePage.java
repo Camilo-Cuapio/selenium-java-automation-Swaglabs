@@ -29,7 +29,6 @@ public class HomePage extends Base {
     By removeElement = By.xpath("//button[contains(text(),'Remove')]");
 
 
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -79,7 +78,7 @@ public class HomePage extends Base {
 
     public List<WebElement> getbtnAddToCart() {
         return findElements(addToCartElement);
-        }
+    }
 
 
     public int getCartItemCount() {
@@ -87,15 +86,14 @@ public class HomePage extends Base {
         return Integer.parseInt(count);
     }
 
-    public int getbtnRemove() {
+    public List<WebElement> getbtnRemove() {
 
-        List<WebElement> remove = findElements(removeElement);
-        return remove.size();
+        return findElements(removeElement);
+
 
     }
 
 
 }
-
 
 

@@ -22,15 +22,13 @@ public class Base {
 
 
     private WebDriver driver;
-    protected WebDriverWait wait;
 
     public Base() {
-
     }
 
     public Base(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+
     }
 
     public WebDriver chromeDriverConnection() {
