@@ -39,15 +39,8 @@ public class BaseTest {
             driver.quit();
         }
     }
-//Taking screenshots with Allure Reports
-    public void takeScreenshot(String name) {
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment(name, new ByteArrayInputStream(screenshot));
-    }
 
-    @AfterEach
-    void tearDown(TestInfo testInfo) {
-        // aquí vamos a intentar detectar fallo
+    public WebDriver getDriver() {
+        return driver;
     }
 }
