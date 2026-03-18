@@ -1,14 +1,23 @@
 package com.camilocuapio.automation.swaglabs;
 
-import org.junit.After;
-import org.junit.Before;
+import io.qameta.allure.Allure;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.TestInfo;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
+import java.io.ByteArrayInputStream;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
 public class BaseTest {
     protected WebDriver driver;
 
     //Enter page
-    @Before
+    @BeforeEach
     public void setUp() {
         Base base = new Base();
         driver = base.chromeDriverConnection();
@@ -24,10 +33,21 @@ public class BaseTest {
 
 
     //Close page
-   @After
+   @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
+    }
+//Taking screenshots with Allure Reports
+    public void takeScreenshot(String name) {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment(name, new ByteArrayInputStream(screenshot));
+    }
+
+    @AfterEach
+    void tearDown(TestInfo testInfo) {
+        // aquí vamos a intentar detectar fallo
     }
 }

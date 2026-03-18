@@ -1,28 +1,24 @@
 package com.camilocuapio.automation.swaglabs;
 
-import com.sun.tools.javac.Main;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.sql.ClientInfoStatus;
-import java.sql.SQLOutput;
 import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.assertEquals;
+
 
 public class Home_Test extends BaseTest {
 
     private HomePage homePage;
 
-    @Before
+    @BeforeEach
     public void setupPage() {
         homePage = new HomePage(driver);
     }
@@ -35,13 +31,13 @@ public class Home_Test extends BaseTest {
         List<Product> actualProducts = homePage.actualNamePriceDescription();
 
         for (int i = 0; i < expectedProducts.size(); i++) {
-            assertEquals(expectedProducts.get(i).getName(),
+            Assertions.assertEquals(expectedProducts.get(i).getName(),
                     actualProducts.get(i).getName());
 
-            assertEquals(expectedProducts.get(i).getPrice(),
+            Assertions.assertEquals(expectedProducts.get(i).getPrice(),
                     actualProducts.get(i).getPrice());
 
-            assertEquals(expectedProducts.get(i).getDescription(),
+            Assertions.assertEquals(expectedProducts.get(i).getDescription(),
                     actualProducts.get(i).getDescription());
         }
     }
@@ -53,7 +49,7 @@ public class Home_Test extends BaseTest {
         homePage.dropDownZtoA();
         List<Product> expectedProducts = TestData.getProductsSortedByName(false);
         List<Product> actualProducts = homePage.actualNamePriceDescription();
-        assertEquals(expectedProducts, actualProducts);
+        Assertions.assertEquals(expectedProducts, actualProducts);
     }
 
     @Test
@@ -64,7 +60,7 @@ public class Home_Test extends BaseTest {
         homePage.dropDownLowToHigh();
         List<Product> expectedProducts = TestData.getProductsSortedByPrice(true);
         List<Product> actualProducts = homePage.actualNamePriceDescription();
-        assertEquals(expectedProducts, actualProducts);
+        Assertions.assertEquals(expectedProducts, actualProducts);
     }
 
     @Test
@@ -73,7 +69,7 @@ public class Home_Test extends BaseTest {
         homePage.dropDownHighToLow();
         List<Product> expectedProducts = TestData.getProductsSortedByPrice(false);
         List<Product> actualProducts = homePage.actualNamePriceDescription();
-        assertEquals(expectedProducts, actualProducts);
+        Assertions.assertEquals(expectedProducts, actualProducts);
     }
 
     @Test
@@ -85,10 +81,10 @@ public class Home_Test extends BaseTest {
             buttonsAdd.get(i).click();
             countAdd++;
         }
-        assertEquals(homePage.getCartItemCount(), countAdd);
+        Assertions.assertEquals(homePage.getCartItemCount(), countAdd);
 //
         int removeCount = homePage.getbtnRemove().size();
-        Assert.assertEquals(6, removeCount);
+        Assertions.assertEquals(6, removeCount);
 
 //
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -98,7 +94,7 @@ public class Home_Test extends BaseTest {
             btn.click();
             wait.until(ExpectedConditions.stalenessOf(btn));
         }
-        Assert.assertEquals(0, homePage.getbtnRemove().size());
+        Assertions.assertEquals(0, homePage.getbtnRemove().size());
     }
 
     @Test
@@ -112,14 +108,14 @@ public class Home_Test extends BaseTest {
             buttons.get(index).click();
         }
 
-        Assert.assertEquals(homePage.getCartItemCount(), expectedCount);
-        Assert.assertEquals(homePage.getbtnRemove().size(), expectedCount);
+        Assertions.assertEquals(homePage.getCartItemCount(), expectedCount);
+        Assertions.assertEquals(homePage.getbtnRemove().size(), expectedCount);
 
         homePage.getbtnRemove().get(0).click();
         homePage.getbtnRemove().get(1).click();
 
-        Assert.assertEquals(homePage.getCartItemCount(), expectedCount - 2);
-        Assert.assertEquals(homePage.getbtnRemove().size(), expectedCount - 2);
+        Assertions.assertEquals(homePage.getCartItemCount(), expectedCount - 2);
+        Assertions.assertEquals(homePage.getbtnRemove().size(), expectedCount - 2);
         }
     }
 

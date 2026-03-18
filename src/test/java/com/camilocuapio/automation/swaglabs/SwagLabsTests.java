@@ -1,10 +1,11 @@
 package com.camilocuapio.automation.swaglabs;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses({SignIn_Test.class, Home_Test.class})
+@Suite
+@SelectClasses({SignIn_Test.class, Home_Test.class})
+
 
 public class SwagLabsTests {
 

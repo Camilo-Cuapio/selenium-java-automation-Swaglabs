@@ -2,7 +2,7 @@ package org.example.junit4;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class StepTest {
 

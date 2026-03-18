@@ -1,19 +1,19 @@
 package com.camilocuapio.automation.swaglabs;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 public class SignIn_Test {
     private WebDriver driver;
     SignInPage signInPage;
 
     //Enter page
-    @Before
+    @BeforeEach
     public void setUp() {
         Base base = new Base();
         driver = base.chromeDriverConnection();
@@ -26,7 +26,7 @@ public class SignIn_Test {
     }
 
     //Close page
-    @After
+    @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();
@@ -38,7 +38,7 @@ public class SignIn_Test {
     public void TC_01_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() throws InterruptedException {
         signInPage.login();
         Thread.sleep(2000);
-        assertTrue(signInPage.pageAccess());
+        Assertions.assertTrue(signInPage.pageAccess());
         //signInPage.takeScreenshot("TC_01_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted"); //Captura pantalla
     }
 
@@ -46,16 +46,16 @@ public class SignIn_Test {
     @Test
     public void TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed() throws InterruptedException {
         signInPage.loginError();
-        assertEquals("Epic sadface: Username and password do not match any user in this service", signInPage.loginErrorMessage());
+        Assertions.assertEquals("Epic sadface: Username and password do not match any user in this service", signInPage.loginErrorMessage());
         //iniciarSesionPagina.takeScreenshot("TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed"); //captura pantalla
     }
 
     @Test
     public void TC_03_givenCredentialsWithIncorrectPassword_whenUserAttemptsToLogIn_thenErrorIconsAreDisplayedInUsernameAndPasswordFieldsAndErrorMessageIsShown() {
         signInPage.loginError();
-        assertEquals(1, signInPage.xBtnUser());
-        assertEquals(1, signInPage.xBtnPassword());
-        assertEquals(1, signInPage.xBtnMsjError());
+        Assertions.assertEquals(1, signInPage.xBtnUser());
+        Assertions.assertEquals(1, signInPage.xBtnPassword());
+        Assertions.assertEquals(1, signInPage.xBtnMsjError());
         //iniciarSesionPagina.takeScreenshot("Validate that the “X” button is displayed.");    //Captura pantalla
     }
 
