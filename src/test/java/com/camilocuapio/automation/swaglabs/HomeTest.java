@@ -4,17 +4,16 @@ package com.camilocuapio.automation.swaglabs;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.*;
-import java.util.stream.Collectors;
 
 
-
-public class Home_Test extends BaseTest {
+@ExtendWith(ScreenshotOnFailureExtension.class)
+public class HomeTest extends BaseTest {
 
     private HomePage homePage;
 
@@ -117,6 +116,12 @@ public class Home_Test extends BaseTest {
         Assertions.assertEquals(homePage.getCartItemCount(), expectedCount - 2);
         Assertions.assertEquals(homePage.getbtnRemove().size(), expectedCount - 2);
         }
+
+    @Test
+    void TC_FAIL_intentionalError() {
+        // Esto fallará a propósito
+        Assertions.assertEquals(1, 2, "Este test fallará intencionalmente");
+    }
     }
 
 

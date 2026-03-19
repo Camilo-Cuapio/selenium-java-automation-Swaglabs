@@ -1,39 +1,22 @@
 package com.camilocuapio.automation.swaglabs;
 
-import io.qameta.allure.Allure;
-
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.TestInfo;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
-import java.io.ByteArrayInputStream;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
-
 public class BaseTest {
+
     protected WebDriver driver;
 
-    //Enter page
     @BeforeEach
-    public void setUp() {
-        Base base = new Base();
-        driver = base.chromeDriverConnection();
-
-        if (driver != null) {
-            SignInPage signInPage = new SignInPage(driver);
-            signInPage.visit("https://www.saucedemo.com/");
-            signInPage.login();
-        } else {
-            throw new RuntimeException("The WebDriver could not be started. Check your Chrome version.");
+    public void setUpDriver() {
+        driver = new Base().chromeDriverConnection();
+        if (driver == null) {
+            throw new RuntimeException("WebDriver no pudo inicializarse.");
         }
     }
 
-
-    //Close page
-   @AfterEach
+    @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();
