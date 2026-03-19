@@ -19,6 +19,10 @@ public class HomeTest extends BaseTest {
 
     @BeforeEach
     public void setupPage() {
+        SignInPage signInPage = new SignInPage(driver);
+        signInPage.visit("https://www.saucedemo.com/");
+        signInPage.login(); // ✅ CLAVE
+
         homePage = new HomePage(driver);
     }
 
