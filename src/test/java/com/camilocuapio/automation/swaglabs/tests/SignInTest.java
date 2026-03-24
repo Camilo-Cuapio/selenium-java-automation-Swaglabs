@@ -1,11 +1,12 @@
 package com.camilocuapio.automation.swaglabs.tests;
+
 import com.camilocuapio.automation.swaglabs.base.BaseTest;
 import com.camilocuapio.automation.swaglabs.pages.SignInPage;
 import com.camilocuapio.automation.swaglabs.utils.ScreenshotOnFailureExtension;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,12 +27,22 @@ public class SignInTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Login with valid credentials")
+    @Description("Verify that user can log in successfully with valid credentials")
+    @Feature("Authentication")
+    @Story("User login")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_01_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() {
         signInPage.login();
         Assertions.assertTrue(signInPage.pageAccess());
     }
 
     @Test
+    @DisplayName("Incorrect password login")
+    @Description("Verify that the user cannot log in with an incorrect password and display an error message")
+    @Feature("Authentication")
+    @Story("User login")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_02_givenIncorrectPassword_whenUserAttemptsToLogIn_thenErrorMessageIsDisplayed() {
         signInPage.loginError();
         Assertions.assertEquals(
@@ -41,6 +52,11 @@ public class SignInTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Display of X buttons")
+    @Description("Verify that when an incorrect password is entered, the X buttons are displayed for username, password, and error message")
+    @Feature("Authentication")
+    @Story("User login")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_03_givenCredentialsWithIncorrectPassword_whenUserAttemptsToLogIn_thenErrorIconsAreDisplayed() {
         signInPage.loginError();
         Assertions.assertEquals(1, signInPage.xBtnUser());
