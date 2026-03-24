@@ -1,0 +1,9 @@
+com\camilocuapio\automation\swaglabs\tests\HomeTest.class
+com\camilocuapio\automation\swaglabs\base\Base.class
+com\camilocuapio\automation\swaglabs\pages\SignInPage.class
+com\camilocuapio\automation\swaglabs\base\BaseTest.class
+com\camilocuapio\automation\swaglabs\tests\SignInTest.class
+com\camilocuapio\automation\swaglabs\data\TestData.class
+com\camilocuapio\automation\swaglabs\models\Product.class
+com\camilocuapio\automation\swaglabs\utils\ScreenshotOnFailureExtension.class
+com\camilocuapio\automation\swaglabs\pages\HomePage.class
