@@ -1,4 +1,4 @@
-package com.camilocuapio.automation.swaglabs;
+package com.camilocuapio.automation.swaglabs.base;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

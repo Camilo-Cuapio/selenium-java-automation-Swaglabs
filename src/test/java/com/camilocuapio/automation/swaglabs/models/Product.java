@@ -1,4 +1,4 @@
-package com.camilocuapio.automation.swaglabs;
+package com.camilocuapio.automation.swaglabs.models;
 
 import java.util.Objects;
 

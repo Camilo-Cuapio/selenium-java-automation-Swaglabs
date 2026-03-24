@@ -1,4 +1,6 @@
-package com.camilocuapio.automation.swaglabs;
+package com.camilocuapio.automation.swaglabs.data;
+
+import com.camilocuapio.automation.swaglabs.models.Product;
 
 import java.util.ArrayList;
 import java.util.Comparator;

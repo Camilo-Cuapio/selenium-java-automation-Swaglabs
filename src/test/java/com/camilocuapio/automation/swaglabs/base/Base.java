@@ -1,4 +1,4 @@
-package com.camilocuapio.automation.swaglabs;
+package com.camilocuapio.automation.swaglabs.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -12,16 +12,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class Base {
 
 
-    private WebDriver driver;
+    protected WebDriver driver;
 
     public Base() {
     }

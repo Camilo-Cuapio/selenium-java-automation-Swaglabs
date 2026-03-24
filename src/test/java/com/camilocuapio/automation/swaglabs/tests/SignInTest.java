@@ -1,21 +1,27 @@
-package com.camilocuapio.automation.swaglabs;
+package com.camilocuapio.automation.swaglabs.tests;
+import com.camilocuapio.automation.swaglabs.base.BaseTest;
+import com.camilocuapio.automation.swaglabs.pages.SignInPage;
+import com.camilocuapio.automation.swaglabs.utils.ScreenshotOnFailureExtension;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.openqa.selenium.WebDriver;
 
 
-@ExtendWith(ScreenshotOnFailureExtension.class)
+@Epic("Swag Labs Automation")
+@Feature("Home Page Products")
+@ExtendWith({ScreenshotOnFailureExtension.class, io.qameta.allure.junit5.AllureJunit5.class})
+//@ExtendWith(ScreenshotOnFailureExtension.class)
 public class SignInTest extends BaseTest {
 
     SignInPage signInPage;
 
     @BeforeEach
     public void setUp() {
-        signInPage = new SignInPage(driver); // ✅ usa el de BaseTest
+        signInPage = new SignInPage(driver); // usa el de BaseTest
         signInPage.visit("https://www.saucedemo.com/");
     }
 

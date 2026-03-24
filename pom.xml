@@ -97,6 +97,14 @@
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
+
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit5.AllureJunit5</value>
+                        </property>
+                    </properties>
+
                 </configuration>
                 <dependencies>
                     <dependency>

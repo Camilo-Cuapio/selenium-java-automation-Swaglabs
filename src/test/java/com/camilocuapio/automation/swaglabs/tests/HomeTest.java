@@ -1,5 +1,12 @@
-package com.camilocuapio.automation.swaglabs;
-
+package com.camilocuapio.automation.swaglabs.tests;
+import com.camilocuapio.automation.swaglabs.models.Product;
+import com.camilocuapio.automation.swaglabs.utils.ScreenshotOnFailureExtension;
+import com.camilocuapio.automation.swaglabs.pages.SignInPage;
+import com.camilocuapio.automation.swaglabs.data.TestData;
+import com.camilocuapio.automation.swaglabs.base.BaseTest;
+import com.camilocuapio.automation.swaglabs.pages.HomePage;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,8 +18,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.*;
 
-
-@ExtendWith(ScreenshotOnFailureExtension.class)
+@Epic("Swag Labs Automation")
+@Feature("Home Page Products")
+@ExtendWith({ScreenshotOnFailureExtension.class, io.qameta.allure.junit5.AllureJunit5.class})
+//@ExtendWith(ScreenshotOnFailureExtension.class)
 public class HomeTest extends BaseTest {
 
     private HomePage homePage;
@@ -21,7 +30,7 @@ public class HomeTest extends BaseTest {
     public void setupPage() {
         SignInPage signInPage = new SignInPage(driver);
         signInPage.visit("https://www.saucedemo.com/");
-        signInPage.login(); // ✅ CLAVE
+        signInPage.login(); //  CLAVE
 
         homePage = new HomePage(driver);
     }
@@ -120,12 +129,12 @@ public class HomeTest extends BaseTest {
         Assertions.assertEquals(homePage.getCartItemCount(), expectedCount - 2);
         Assertions.assertEquals(homePage.getbtnRemove().size(), expectedCount - 2);
         }
-
+   /* @Disabled("Test intencional")
     @Test
     void TC_FAIL_intentionalError() {
         // Esto fallará a propósito
         Assertions.assertEquals(1, 2, "Este test fallará intencionalmente");
-    }
+    }*/
     }
 
 
