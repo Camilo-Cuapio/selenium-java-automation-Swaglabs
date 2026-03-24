@@ -20,8 +20,7 @@ import java.util.*;
 
 @Epic("Swag Labs Automation")
 @Feature("Home Page Products")
-@ExtendWith({ScreenshotOnFailureExtension.class, io.qameta.allure.junit5.AllureJunit5.class})
-//@ExtendWith(ScreenshotOnFailureExtension.class)
+@ExtendWith(ScreenshotOnFailureExtension.class)
 public class HomeTest extends BaseTest {
 
     private HomePage homePage;

@@ -13,9 +13,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 
 @Epic("Swag Labs Automation")
-@Feature("Home Page Products")
-@ExtendWith({ScreenshotOnFailureExtension.class, io.qameta.allure.junit5.AllureJunit5.class})
-//@ExtendWith(ScreenshotOnFailureExtension.class)
+@Feature("Sign In Page Products")
+@ExtendWith(ScreenshotOnFailureExtension.class)
+
 public class SignInTest extends BaseTest {
 
     SignInPage signInPage;
@@ -34,6 +34,17 @@ public class SignInTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     public void TC_01_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() {
         signInPage.login();
+        Assertions.assertTrue(signInPage.pageAccess());
+    }
+
+    @Test
+    @DisplayName("Login with valid credentials ERRORFORCAPTURE")
+    @Description("Verify that user can log in successfully with valid credentials")
+    @Feature("Authentication")
+    @Story("User login")
+    @Severity(SeverityLevel.CRITICAL)
+    public void TC_ERRORFORCAPTURE_givenValidCredentials_whenUserLogsIn_thenAccessIsGranted() {
+        signInPage.loginError();
         Assertions.assertTrue(signInPage.pageAccess());
     }
 
