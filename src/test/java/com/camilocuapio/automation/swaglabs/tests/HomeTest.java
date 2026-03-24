@@ -159,12 +159,7 @@ public class HomeTest extends BaseTest {
         Assertions.assertEquals(homePage.getCartItemCount(), expectedCount - 2);
         Assertions.assertEquals(homePage.getbtnRemove().size(), expectedCount - 2);
         }
-   /* @Disabled("Test intencional")
-    @Test
-    void TC_FAIL_intentionalError() {
-        // Esto fallará a propósito
-        Assertions.assertEquals(1, 2, "Este test fallará intencionalmente");
-    }*/
+
     }
 
 
