@@ -5,10 +5,10 @@ import com.camilocuapio.automation.swaglabs.pages.SignInPage;
 import com.camilocuapio.automation.swaglabs.data.TestData;
 import com.camilocuapio.automation.swaglabs.base.BaseTest;
 import com.camilocuapio.automation.swaglabs.pages.HomePage;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -36,6 +36,11 @@ public class HomeTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Product Order Validation")
+    @Description("Verifies that product names are displayed in ascending order and identifies the corresponding price and description")
+    @Feature("Ascending Product Name Order")
+    @Story("Homepage Product List")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible() {
 
 //Expected product list A to Z
@@ -55,6 +60,11 @@ public class HomeTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Product Order Validation")
+    @Description("Verifies that product names are displayed in descending order and identifies the corresponding price and description")
+    @Feature("Descending Product Name Order")
+    @Story("Homepage Product List")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_05_givenCurrentProductList_whenComparedWithExpectedList_thenProductsAreInZToAOrder() {
 
         //Expected product list Z to A
@@ -65,6 +75,11 @@ public class HomeTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Price sorting in ascending order")
+    @Description("Verifies that prices are displayed in ascending order and that the name and description match")
+    @Feature("Price sorting in ascending order")
+    @Story("Price list homepage")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_06_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInAscendingOrder() {
 
         List<String> expectedPrice = new ArrayList<>();
@@ -76,6 +91,11 @@ public class HomeTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Price sorting in descending order")
+    @Description("Verifies that prices are displayed in descending order and that the name and description match")
+    @Feature("Price sorting in descending order")
+    @Story("Price list homepage")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_07_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInDescendingOrder() {
 
         homePage.dropDownHighToLow();
@@ -85,6 +105,11 @@ public class HomeTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Add and remove items from shopping cart validation")
+    @Description("Verifies that all products can be added and removed; the cart counter is 6 and then 0")
+    @Feature("Add and remove items from shopping cart")
+    @Story("Add and remove items")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero() {
 //
         List<WebElement> buttonsAdd = homePage.getbtnAddToCart();
@@ -110,6 +135,11 @@ public class HomeTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Add and remove items from shopping cart validation")
+    @Description("Verifies that it allows adding 3 products and removing 2 from the cart; 3 are displayed, then 1")
+    @Feature("Add and remove items from shopping cart")
+    @Story("Add and remove items")
+    @Severity(SeverityLevel.CRITICAL)
     public void TC_09_shouldKeepOnlyOneProductInCartAfterAddingThreeAndRemovingTwo() {
         List<WebElement> buttons = homePage.getbtnAddToCart();
 
