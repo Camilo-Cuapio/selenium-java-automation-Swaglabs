@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="03e7757f-32aa-4e15-a3bb-f5ba9d520926" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/behaviors.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/behaviors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/categories.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/categories.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/packages.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/suites.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/suites.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/timeline.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/export/influxDbData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/export/mail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/export/prometheusData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/history/categories-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/history/duration-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/history/history-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/history/history.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/history/retry-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/behaviors/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/packages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/screen-diff/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/screen-diff/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/behaviors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/categories-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/categories.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/duration-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/duration.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/environment.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/executors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/history-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/retry-trend.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/severity.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/status-chart.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/suites.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/widgets/summary.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="39d6spSuYMITablLFYg2YnYFLGS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.HomeTest.TC_FAIL_intentionalError.executor": "Run",
+    "JUnit.Home_Test.TC_04_givenUserIsOnProductsPage_whenProductListIsDisplayed_thenAllProductsAreVisible.executor": "Run",
+    "JUnit.Home_Test.TC_05_givenCurrentProductList_whenComparedWithExpectedList_thenProductsAreInZToAOrder.executor": "Run",
+    "JUnit.Home_Test.TC_05_namePriceDescription.executor": "Run",
+    "JUnit.Home_Test.TC_06_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInAscendingOrder.executor": "Run",
+    "JUnit.Home_Test.TC_06_verifyProductsSortedByNameDesc.executor": "Run",
+    "JUnit.Home_Test.TC_07_givenCurrentPriceList_whenComparedWithExpectedList_thenPricesAreInDescendingOrder.executor": "Run",
+    "JUnit.Home_Test.TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenAllButtonsChangeToRemove.executor": "Run",
+    "JUnit.Home_Test.TC_08_givenUserIsOnProductsPage_whenUserAddsAllProductsToCart_thenProductsAreAddedToCart.executor": "Run",
+    "JUnit.Home_Test.TC_08_givenUserIsOnProductsPage_whenUserAddsProductToCart_thenProductIsAddedToCart.executor": "Run",
+    "JUnit.Home_Test.TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero.executor": "Run",
+    "JUnit.Home_Test.TC_09_give.executor": "Run",
+    "JUnit.Home_Test.TC_09_givenUserIsOnProductsPage_whenUserClicksAddButton_thenButtonChangesToRemove.executor": "Run",
+    "JUnit.Home_Test.TC_09_shouldKeepOnlyOneProductInCartAfterAddingThreeAndRemovingTwo.executor": "Run",
+    "JUnit.Home_Test.TC_ValidateAllButtonsChangeToRemove.executor": "Run",
+    "JUnit.Home_Test.executor": "Run",
+    "JUnit.Home_Test.namePrice.executor": "Run",
+    "JUnit.Home_Test.namePriceDescription.executor": "Run",
+    "JUnit.SwagLabsTests.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/DELL/Documents/ARCHIVOS/automation-swag-labs",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.camilocuapio.automation.swaglabs.data" />
+      <recent name="com.camilocuapio.automation.swaglabs.tests" />
+      <recent name="com.camilocuapio.automation.swaglabs.pages" />
+      <recent name="com.camilocuapio.automation.swaglabs.utils" />
+      <recent name="com.camilocuapio.automation.swaglabs.models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.HomeTest.TC_FAIL_intentionalError">
+    <configuration name="HomeTest.TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="allure-junit4-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.camilocuapio.automation.swaglabs.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.camilocuapio.automation.swaglabs.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.camilocuapio.automation.swaglabs.tests.HomeTest" />
+      <option name="METHOD_NAME" value="TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeTest.TC_09_give" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="allure-junit4-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.camilocuapio.automation.swaglabs.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.camilocuapio.automation.swaglabs.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.camilocuapio.automation.swaglabs.tests.HomeTest" />
+      <option name="METHOD_NAME" value="TC_09_give" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeTest.TC_09_shouldKeepOnlyOneProductInCartAfterAddingThreeAndRemovingTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="allure-junit4-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.camilocuapio.automation.swaglabs.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.camilocuapio.automation.swaglabs.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.camilocuapio.automation.swaglabs.tests.HomeTest" />
+      <option name="METHOD_NAME" value="TC_09_shouldKeepOnlyOneProductInCartAfterAddingThreeAndRemovingTwo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeTest.TC_FAIL_intentionalError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="allure-junit4-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.camilocuapio.automation.swaglabs.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.camilocuapio.automation.swaglabs.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.camilocuapio.automation.swaglabs.tests.HomeTest" />
+      <option name="METHOD_NAME" value="TC_FAIL_intentionalError" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwagLabsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="allure-junit4-selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.camilocuapio.automation.swaglabs.base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.camilocuapio.automation.swaglabs" />
+      <option name="MAIN_CLASS_NAME" value="com.camilocuapio.automation.swaglabs.SwagLabsTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="automation-swag-labs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="automation-swag-labs" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HomeTest.TC_FAIL_intentionalError" />
+        <item itemvalue="JUnit.SwagLabsTests" />
+        <item itemvalue="JUnit.HomeTest.TC_09_shouldKeepOnlyOneProductInCartAfterAddingThreeAndRemovingTwo" />
+        <item itemvalue="JUnit.HomeTest.TC_09_give" />
+        <item itemvalue="JUnit.HomeTest.TC_08_givenUserOnProductsPage_whenUserAddsAndRemovesAllProducts_thenCartCountIsSixAndThenZero" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03e7757f-32aa-4e15-a3bb-f5ba9d520926" name="Changes" comment="" />
+      <created>1771013809903</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771013809903</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
